@@ -66,15 +66,10 @@ Make the scripts executable:
 
     chmod -R 777 `kde4-config --localprefix`/share/apps/be.shell/Scripts/*
 
-
-Vertex
+Code
 ======
 
-Unity-Like dark theme using [BE--Tray icons](http://be-desk.deviantart.com/art/Be-Tray-Icons-16px-364645083) by LaGaDesk and [Moka Minimal](http://cbowman57.deviantart.com/art/Moka-Minimal-and-Faba-Minimal-Icon-Sets-482927307) by cbowman57.
-The suite is inspired by [Vertex GTK](http://horst3180.deviantart.com/art/Vertex-Theme-470663601).
-
-
-![Vertex preview](https://lh5.googleusercontent.com/-h83zA_HCRVQ/VGYMxGGvQOI/AAAAAAAAC7I/eNZRGMB8qW4/w1058-h595-no/schermata662.png "Vertex")
+![Code preview](https://raw.githubusercontent.com/BeDevil/be.shell/master/Pictures/code.png "Code")
 
 Dynamo
 ======
@@ -87,7 +82,12 @@ Dynamo makes use of BE::Shell labels, either by polling a script, either as FiFo
 
 ![Dynamo preview](https://raw.githubusercontent.com/BeDevil/be.shell/master/Pictures/Dynamo.png "Dynamo")
 
-Code
+
+Vertex
 ======
 
-![Code preview](https://raw.githubusercontent.com/BeDevil/be.shell/master/Pictures/code.png "Code")
+Unity-Like dark theme using [BE--Tray icons](http://be-desk.deviantart.com/art/Be-Tray-Icons-16px-364645083) by LaGaDesk and [Moka Minimal](http://cbowman57.deviantart.com/art/Moka-Minimal-and-Faba-Minimal-Icon-Sets-482927307) by cbowman57.
+The suite is inspired by [Vertex GTK](http://horst3180.deviantart.com/art/Vertex-Theme-470663601).
+
+
+![Vertex preview](https://lh5.googleusercontent.com/-h83zA_HCRVQ/VGYMxGGvQOI/AAAAAAAAC7I/eNZRGMB8qW4/w1058-h595-no/schermata662.png "Vertex")

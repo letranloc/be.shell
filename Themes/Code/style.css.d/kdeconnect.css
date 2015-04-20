@@ -1,0 +1,10 @@
+/*kdeconnect*/
+
+.table { vertical-align: top; }
+#device-name { background: transparent; font: 14pt robotolight; font-weight: bold; text-align: left; color: rgba(214,214,214,255); padding-right: 2px; }
+/*#device-icon { background: transparent; }*/
+#battery-header {  font: 14pt robotolight; font-weight: bold; color: rgba(214,214,214,255); padding-left: 4px; }
+#battery-value { font: 14pt robotolight; color: rgba(214,214,214,255); padding-right: 4px; }
+#notification-header { font: 14pt robotolight; font-weight: bold; color: rgba(214,214,214,255); }
+#notification { font: 14pt robotolight; color: rgba(214,214,214,255); padding-left: 2px; padding-right: 2px; }
+#notification-close-button { max-width: 16px; }

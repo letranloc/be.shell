@@ -1,0 +1,50 @@
+/*Code theme for Be::Shell by ParanoidNemo
+ * This is the main CSS theme file, with panels config, 
+ * general fixes and font management. Applet-specific 
+ * parts have been moved to the 
+ * /Themes/Vertex/style.css.d/ directory */ 
+ 
+/* Here starts the panels config*/
+
+#BottomPanel
+{
+  border-image: url("${base}/BottomPanel/dock.png");
+  background-color: transparent;
+  border: 0px transparent;
+  padding: 0px;
+  margin: 0px; 
+}
+#TopPanel
+{
+  border-image: url("${base}/TopPanel/dock-up.png");
+  background-color: transparent;
+  border: 0px transparent;
+  padding: 2 0 4 0;
+  margin: 0px; 
+}
+#MusicPanel { background-color: transparent; }
+#ConnectPanel { background-color: rgba(255,255,255,100); margin: 0 0 0 0; padding: 0 0 0 0; }
+
+/* Various Applets & fixes */
+
+.BE--Volume { background-color: transparent; padding: 0 0 0 0; max-width: 19px; }
+.BE--InfoCenter { color: transparent; image: url("${base}/TopPanel/info.png") no-repeat; align: center; max-width: 19px; padding: 0 2 0 0; }
+.BE--MediaTray { background-color: transparent; padding: 0 4 0 4; }
+.BE--MediaTray QToolButton { background-color: transparent; border: none; padding: 0 0 0 0; max-width: 20px; }
+.BE--Clock { background-color: transparent; padding: 0 4 0 4; font: 10pt robotolight; color: rgb(214,214,214); }
+*:menu-indicator { image: none; }
+
+/* Fix for simple applets*/
+
+#start { background-color: transparent; border: none; max-width:24; padding: 0 0 0 2; }
+#upico { background-color: transparent; padding: 0 2 0 0; color: rgb(0,0,0); max-width: 22px; }
+#aur { background-color: transparent; padding: 0 2 0 0; color: rgb(0,0,0); max-width: 22px; }
+#mail { background-color: transparent; padding: 0 2 0 0; color: rgb(0,0,0); max-width: 22px; }
+#mpc { background-color: rgba(66,67,83,220); border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; padding: 24 2 4 2; font: 9pt robotolight; color: rgba(214,214,214,255); }
+#wifi { background-color: transparent; padding: 0 2 0 2; margin: 0 0 0 0; max-width:24px; border: none; }
+#tasks { background-color: transparent; }
+#cover { background-color: transparent; margin: 0 0 0 0; }
+#kdeconnect { background-color: rgba(66,67,82,220); border-bottom-left-radius: 12px; padding: 0 0 0 4; }
+#drive { background-color: transparent; border: none; max-width: 20; padding: 0 0 0 0; }
+#bitbucket { background-color: transparent; border: none; max-width: 20; padding: 0 4 0 2; }
+#tray { background-color: transparent; border: none; padding: 0 0 0 4; }

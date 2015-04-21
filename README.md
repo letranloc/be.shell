@@ -71,7 +71,7 @@ Code
 
 A minimal B/W theme. Using mpc and applet script (soon in script folder) for music information.
 
-![Code preview](https://raw.githubusercontent.com/BeDevil/be.shell/master/Pictures/code.png "Code")
+![Code preview](https://raw.githubusercontent.com/BeDevil/be.shell/master/Pictures/Code.png "Code")
 
 Dynamo
 ======
@@ -84,6 +84,12 @@ Dynamo makes use of BE::Shell labels, either by polling a script, either as FiFo
 
 ![Dynamo preview](https://raw.githubusercontent.com/BeDevil/be.shell/master/Pictures/Dynamo.png "Dynamo")
 
+Eve
+======
+
+Flat theme inspired to LWT show. Use applet script (soon in script folder) for update, e-mail and music informations.
+
+![Eve preview](https://raw.githubusercontent.com/BeDevil/be.shell/master/Pictures/Eve.png "Eve")
 
 Vertex
 ======

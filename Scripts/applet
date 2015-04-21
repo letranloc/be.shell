@@ -101,7 +101,7 @@ source "${myOutputFile}"
 
 case $1 in
     mpc) #Function music takes a param itself:
-        music "$@"
+        music "$2"
         ;;
     mail) 
         mail

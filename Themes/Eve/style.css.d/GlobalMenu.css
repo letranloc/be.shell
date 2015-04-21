@@ -1,0 +1,11 @@
+/*Global Menu*/
+.BE--GMenu QMenuBar { font: 9pt robotolight; color: rgb(0,0,0); }
+.BE--GMenu QMenuBar::item::selected { background-color: rgb(87,154,224); color: rgb(241,241,241); }
+
+/*The menus */
+QMenu { background: rgb(214,214,214); border: none; font: 9pt robotolight; }
+
+QMenu::item { border: transparent; padding: 3 24 3 2; color: rgb(0,0,0); }
+QMenu::item:selected { background-color: rgb(87,154,224); color: rgb(255,255,255); padding: 3 24 3 2; }
+
+QMenu::separator { height: 1px; border: none; background: rgb(226,225,227); }

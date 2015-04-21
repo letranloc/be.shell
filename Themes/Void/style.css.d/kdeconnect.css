@@ -1,0 +1,9 @@
+/*kdeconnect*/
+
+.table { vertical-align: middle; }
+#device-name { background: transparent; font: 9pt Roboto light; font-weight: bold; text-align: left; color: rgba(0,0,0,255); padding-right: 2px; }
+#battery-header {  font: 9pt Roboto light; color: rgba(0,0,0,255); padding-left: 4px; }
+#battery-value { font: 9pt Roboto light; color: rgba(0,0,0,255); padding-right: 4px; }
+#notification-header { font: 9pt Roboto light; color: rgba(0,0,0,255); }
+#notification { font: 9pt Roboto light; color: rgba(0,0,0,255); padding-left: 2px; padding-right: 2px; }
+#notification-close-button { max-width: 16px; }

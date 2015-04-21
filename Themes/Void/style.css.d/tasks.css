@@ -1,0 +1,17 @@
+/*  Start Button, TaskBar  and Trash */
+
+.BE--Task, #NoTask, #OneTask:checked, #starter { 
+  margin: 0 0 0 0;  
+  color: rgba(0,0,0,255);
+  max-width: 50px; 
+  font: 9pt robotolight;
+  border: none; 
+  padding: 0 0 0 0;
+}
+
+.BE--Task:hover { border-right: 2px solid rgba(248,189,67,255); margin: 0 0 0 0; }
+
+#OneTask { border-right: 2px solid rgba(248,189,67,255); margin: 0 0 0 0; }
+#OneTask:checked { border-right: 2px solid rgba(55,139,251,255); margin: 0 0 0 0; }
+#OneTask[windowMinimized="true"] { border-right: 2px solid rgb(70,70,70); margin: 0 0 0 0; color: rgb(80,80,80); }
+#ManyTasks[windowMinimized="true"] { border-right: 2px solid rgb(70,70,70); margin: 0 0 0 0; color: rgb(80,80,80); }

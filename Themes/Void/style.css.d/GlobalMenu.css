@@ -1,0 +1,12 @@
+/*Global Menu*/
+.BE--GMenu QMenuBar { border-top: 1px solid rgba(0,0,0,255); }
+.BE--GMenu QMenuBar::item { font: 9pt roboto; color: rgba(0,0,0,255); padding: 2 0 0 0; }
+.BE--GMenu QMenuBar::item::selected { border-top: 2px solid rgba(0,0,0,255); color: rgba(0,0,0,255); padding: 0 0 0 0; }
+
+/*The menus */
+QMenu { background: rgb(214,214,214); border: none; font: 9pt robotolight; }
+
+QMenu::item { border: transparent; padding: 3 24 3 2; color: rgba(0,0,0,255); }
+QMenu::item:selected { background-color: rgb(94,103,113); color: rgba(214,214,214,255); padding: 3 24 3 2; }
+
+QMenu::separator { height: 1px; border: none; background: rgb(226,225,227); }

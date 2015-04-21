@@ -69,6 +69,8 @@ Make the scripts executable:
 Code
 ======
 
+A minimal B/W theme. Using mpc and applet script (soon in script folder) for music information.
+
 ![Code preview](https://raw.githubusercontent.com/BeDevil/be.shell/master/Pictures/code.png "Code")
 
 Dynamo

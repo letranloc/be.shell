@@ -87,9 +87,16 @@ Dynamo makes use of BE::Shell labels, either by polling a script, either as FiFo
 Eve
 ======
 
-Flat theme inspired to LWT show. Use applet script (soon in script folder) for update, e-mail and music informations.
+Flat theme inspired to LWT show using [Nitrux-circle](https://github.com/NitruxSA) icons. Use applet script (soon in script folder) for update, e-mail and music informations.
 
 ![Eve preview](https://raw.githubusercontent.com/BeDevil/be.shell/master/Pictures/Eve.png "Eve")
+
+Flare
+======
+
+Simply a dark be.shell theme using [Nitrux-circle](https://github.com/NitruxSA) icons. Use applet script (soon in script folder) for update, e-mail and music informations.
+
+![Flare preview](https://raw.githubusercontent.com/BeDevil/be.shell/master/Pictures/Flare.png "Flare")
 
 Vertex
 ======

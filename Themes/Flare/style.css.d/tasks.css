@@ -1,0 +1,43 @@
+/*  Start Button, TaskBar  and Trash */
+
+.BE--Task:hover {
+      background-image: url("${base}/background-images/task-open.svg");
+      background-repeat: no-repeat;
+      background-position: bottom center;
+}
+
+#TrashCan { 
+  margin: -1 -1 -3 1; 
+  padding: 8 10 12 8; 
+}
+
+.BE--Task, #NoTask, #OneTask:checked, #starter  { 
+  background-color:transparent;
+  max-width:100px;
+  padding: 0 0 5 0;
+  border:none;
+}  
+
+#OneTask { 
+      background-image: url("${base}/background-images/task-open.svg");
+      background-repeat: no-repeat;
+      background-position: bottom center;
+}
+
+#OneTask:checked {  
+      background-image: url("${base}/background-images/task-focus.svg");
+      background-repeat: no-repeat;
+      background-position: bottom center;
+}
+
+#OneTask[windowMinimized="true"] { 
+      background-image: url("${base}/background-images/task-min.svg");
+      background-repeat: no-repeat;
+      background-position: bottom center;
+}
+
+#ManyTasks[windowMinimized="true"] { 
+      background-image: url("${base}/background-images/task-min.svg");
+      background-repeat: no-repeat;
+      background-position: bottom center;
+}

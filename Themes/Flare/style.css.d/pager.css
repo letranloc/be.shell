@@ -1,0 +1,35 @@
+/*Pager*/
+
+.BE--Pager {
+  background-color:transparent;
+  padding-top:2px;
+}
+
+.BE--Pager QToolButton {
+  background-image: url("${base}/background-images/pager-check.svg");
+  background-position:center;
+  background-repeat:no-repeat;
+  padding-left:5px;
+  padding-right:5px;
+  border:none;
+  color:transparent;
+  max-width:8px;
+}
+
+.BE--Pager QToolButton:checked {
+  background-image: url("${base}/background-images/pager-focus.svg");
+  background-position:center;
+  background-repeat:no-repeat;
+  border:none;
+  color:transparent;
+  max-width:12px;
+}
+
+.BE--Pager QToolButton:hover {
+  background-image: url("${base}/background-images/pager-hover.svg");
+  background-position:center;
+  background-repeat:no-repeat;
+  border:none;
+  color:transparent;
+  max-width:12px;
+} 

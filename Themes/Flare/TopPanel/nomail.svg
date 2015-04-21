@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created using Karbon, part of Calligra: http://www.calligra.org/karbon -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12.8pt" height="12.8pt">
+<defs/>
+<g id="Icons with numbers">
+  <g id="Group" transform="translate(0.375, 2.375)" fill="none">
+   <path id="Shape" transform="translate(0.625, 0.625)" fill="#f6f6f6" fill-rule="evenodd" d="M8.73196 5.48454L13.6818 9.72722C13.5017 9.89546 13.2595 10 12.9932 10L1.00684 10C0.739189 10 0.496237 9.89706 0.316068 9.72908L5.26804 5.48454L7 7ZM7 6L0.318245 0.272782C0.498319 0.104536 0.740505 0 1.00684 0L12.9932 0C13.2608 0 13.5038 0.102945 13.6839 0.270916ZM14 9.18561L9.16736 5.07886L14 0.875422L14 9.18561ZM0 9.18561L0 0.878152L4.83264 5.07886L0 9.18561ZM0 9.18561"/>
+  </g>
+ </g>
+</svg>

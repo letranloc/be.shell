@@ -12,7 +12,7 @@ Installation
 
 Clone this repository:
 
-    git clone https://github.com/Bedevil/be.shell.git
+    git clone https://github.com/Hombremaledicto/be.shell.git
     cd be.shell
     
 You can either install presets using the provided script or copying the files manually.
@@ -76,7 +76,11 @@ A minimal B/W theme. Using mpc and applet script (soon in script folder) for mus
 Dynamo
 ======
 
-A light theme miming the official Breeze artworks for KDE Plasma5. You can find the offial Breeze icon theme [here](https://github.com/NitruxSA/plasma-next-icons). Scripts used are rss2htm, be.kdeconnect(both in this repo), [shellfeed](https://github.com/Bedevil/shellfeed) and[shelloid_mpris](https://github.com/Bedevil/shelloid_mpris).
+A light theme miming the official Breeze artworks for KDE Plasma5. You can find the offial Breeze icon theme [here](https://github.com/NitruxSA/plasma-next-icons).
+Dynamo makes use of BE::Shell labels, either by polling a script, either as FiFos. Some of these scripts are included in this repository (check the Scripts folder for rss2html and be.kdeconnect), others are from [magpie240](https://github.com/magpie240) and require to be installed & configured from the relative repositories:
+
+- [shellfeed](https://github.com/magpie240/shellfeed)
+- [shelloid_mpris](https://github.com/magpie240/shelloid_mpris)
 
 ![Dynamo preview](https://raw.githubusercontent.com/BeDevil/be.shell/master/Pictures/Dynamo.png "Dynamo")
 
@@ -102,3 +106,14 @@ The suite is inspired by [Vertex GTK](http://horst3180.deviantart.com/art/Vertex
 
 
 ![Vertex preview](https://lh5.googleusercontent.com/-h83zA_HCRVQ/VGYMxGGvQOI/AAAAAAAAC7I/eNZRGMB8qW4/w1058-h595-no/schermata662.png "Vertex")
+
+Void
+======
+
+Almost flat light theme using applet script (soon in script folder) for music informations. Some panels like the applications one are hide (NOT AUTOHIDE) by default. You can change that in the be.shell config file (Visible=true) or set a dbus shortcut using
+
+    kcmshell4 --khotkeys
+    
+that toogle the panel.
+
+![Void preview](https://raw.githubusercontent.com/BeDevil/be.shell/master/Pictures/Void.png "Void")

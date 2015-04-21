@@ -76,10 +76,7 @@ A minimal B/W theme. Using mpc and applet script (soon in script folder) for mus
 Dynamo
 ======
 
-A light theme miming the official Breeze artworks for KDE Plasma5. You can find the offial Breeze icon theme [here](https://github.com/NitruxSA/plasma-next-icons). Scripts used are rss2htm, be.kdeconnect(both in this repo) and:
-
-- [shellfeed](https://github.com/Bedevil/shellfeed)
-- [shelloid_mpris](https://github.com/Bedevil/shelloid_mpris)
+A light theme miming the official Breeze artworks for KDE Plasma5. You can find the offial Breeze icon theme [here](https://github.com/NitruxSA/plasma-next-icons). Scripts used are rss2htm, be.kdeconnect(both in this repo), [shellfeed](https://github.com/Bedevil/shellfeed) and[shelloid_mpris](https://github.com/Bedevil/shelloid_mpris).
 
 ![Dynamo preview](https://raw.githubusercontent.com/BeDevil/be.shell/master/Pictures/Dynamo.png "Dynamo")
 

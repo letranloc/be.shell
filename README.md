@@ -12,7 +12,7 @@ Installation
 
 Clone this repository:
 
-    git clone https://github.com/Hombremaledicto/be.shell.git
+    git clone https://github.com/Bedevil/be.shell.git
     cd be.shell
     
 You can either install presets using the provided script or copying the files manually.
@@ -76,11 +76,10 @@ A minimal B/W theme. Using mpc and applet script (soon in script folder) for mus
 Dynamo
 ======
 
-A light theme miming the official Breeze artworks for KDE Plasma5. You can find the offial Breeze icon theme [here](https://github.com/NitruxSA/plasma-next-icons).
-Dynamo makes use of BE::Shell labels, either by polling a script, either as FiFos. Some of these scripts are included in this repository (check the Scripts folder for rss2html and be.kdeconnect), others are from [magpie240](https://github.com/magpie240) and require to be installed & configured from the relative repositories:
+A light theme miming the official Breeze artworks for KDE Plasma5. You can find the offial Breeze icon theme [here](https://github.com/NitruxSA/plasma-next-icons). Scripts used are rss2htm, be.kdeconnect(both in this repo) and:
 
-- [shellfeed](https://github.com/magpie240/shellfeed)
-- [shelloid_mpris](https://github.com/magpie240/shelloid_mpris)
+- [shellfeed](https://github.com/Bedevil/shellfeed)
+- [shelloid_mpris](https://github.com/Bedevil/shelloid_mpris)
 
 ![Dynamo preview](https://raw.githubusercontent.com/BeDevil/be.shell/master/Pictures/Dynamo.png "Dynamo")
 

@@ -66,50 +66,6 @@ Make the scripts executable:
 
     chmod -R 777 `kde4-config --localprefix`/share/apps/be.shell/Scripts/*
 
-Code
-======
-
-A minimal B/W theme. Using mpc and applet script (soon in script folder) for music information.
-
-![Code preview](https://raw.githubusercontent.com/BeDevil/be.shell/master/Pictures/Code.png "Code")
-
-Dynamo
-======
-
-A light theme miming the official Breeze artworks for KDE Plasma5. You can find the offial Breeze icon theme [here](https://github.com/NitruxSA/plasma-next-icons).Using scripts rss2htm, be.kdeconnect(both of them included in this repository), [shellfeed](https://github.com/BeDevil/shellfeed) and [shelloid_mpris](https://github.com/BeDevil/shelloid_mpris).
-
-![Dynamo preview](https://raw.githubusercontent.com/BeDevil/be.shell/master/Pictures/Dynamo.png "Dynamo")
-
-Eve
-======
-
-Flat theme inspired to LWT show using [Nitrux-circle](https://github.com/NitruxSA) icons. Use applet script (soon in script folder) for update, e-mail and music informations.
-
-![Eve preview](https://raw.githubusercontent.com/BeDevil/be.shell/master/Pictures/Eve.png "Eve")
-
-Flare
-======
-
-Simply a dark be.shell theme using [Nitrux-circle](https://github.com/NitruxSA) icons. Use applet script (soon in script folder) for update, e-mail and music informations.
-
-![Flare preview](https://raw.githubusercontent.com/BeDevil/be.shell/master/Pictures/Flare.png "Flare")
-
-Vertex
-======
-
-Unity-Like dark theme using [BE--Tray icons](http://be-desk.deviantart.com/art/Be-Tray-Icons-16px-364645083) by LaGaDesk and [Moka Minimal](http://cbowman57.deviantart.com/art/Moka-Minimal-and-Faba-Minimal-Icon-Sets-482927307) by cbowman57.
-The suite is inspired by [Vertex GTK](http://horst3180.deviantart.com/art/Vertex-Theme-470663601).
 
 
-![Vertex preview](https://lh5.googleusercontent.com/-h83zA_HCRVQ/VGYMxGGvQOI/AAAAAAAAC7I/eNZRGMB8qW4/w1058-h595-no/schermata662.png "Vertex")
-
-Void
-======
-
-Almost flat light theme using applet script (soon in script folder) for music informations. Some panels like the applications one are hide (NOT AUTOHIDE) by default. You can change that in the be.shell config file (Visible=true) or set a dbus shortcut using
-
-    kcmshell4 --khotkeys
-    
-that toogle the panel.
-
-![Void preview](https://raw.githubusercontent.com/BeDevil/be.shell/master/Pictures/Void.png "Void")
+For a complete themes gallery see [here](https://github.com/Bedevil/be.shell/wiki/Gallery)

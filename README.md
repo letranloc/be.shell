@@ -16,6 +16,7 @@ Clone this repository:
     cd be.shell
     
 You can either install presets using the provided script or copying the files manually.
+To see the themes available in this repo, check our [gallery](https://github.com/Bedevil/be.shell/wiki/Gallery).
    
 **By script**
 
@@ -66,6 +67,3 @@ Make the scripts executable:
 
     chmod -R 777 `kde4-config --localprefix`/share/apps/be.shell/Scripts/*
 
-
-
-For a complete themes gallery see [here](https://github.com/Bedevil/be.shell/wiki/Gallery)

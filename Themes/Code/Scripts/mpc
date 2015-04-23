@@ -13,7 +13,7 @@ if [[ "$1" = "mpc" ]]; then
 
   PLAY="<a href=\"exec:mpc toggle\"><img src=\"$THEMEDIR/BottomPanel/play.png\"width=\"16\"></a>"
   PAUSE="<a href=\"exec:mpc toggle\"><img src=\"$THEMEDIR/BottomPanel/pause.png\"width=\"16\"></a>"
-  STOP="<a href=\"exec:konsole -e ncmpcpp\"><img src=\"$THEMEDIR/BottomPanel/stop.png\"width=\"16\"></a>"
+  STOP="<a href=\"exec:cantata\"><img src=\"$THEMEDIR/BottomPanel/stop.png\"width=\"16\"></a>"
   
   out1="$DIVHEADER<td>$PLAY</td><td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$TITLE</td><td>$SEP</td><td>$SEP1</td><td>$SEP</td><td>$ARTIST</td></tr></table>"
 
@@ -24,7 +24,7 @@ if [[ "$1" = "mpc" ]]; then
 elif [[ "$1" = "cover" ]]; then
 
   COV="<a href=\"exec:mpc toggle\"><img src=\"$HOME/immagini/cover/$ALBUM\"width=\"40\" /></a>"
-  NOCOV="<a href=\"exec:konsole -e ncmpcpp\"><img src=\"$confDir/Themes/Eve/BottomPanel/google-musicmanager.svg\"width=\"45\" /></a>"
+  NOCOV="<a href=\"exec:cantata\"><img src=\"$confDir/Themes/Eve/BottomPanel/google-musicmanager.svg\"width=\"45\" /></a>"
 
   out1="$DIVHEADER$COV</tr></table>"
 

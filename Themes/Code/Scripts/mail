@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+#You'll need to set username and password from within the applet script!
+#Which...Sucks. Everything sux.
+#I hate you, people :)
+
+BG="background-color: transparent"
+MAIL="<a href=\"exec:kmail\"><img src=\"$THEMEDIR/TopPanel/mail.png\"width=\"18\"></a>"
+DIVHEADER="<table valign=\"middle\" cellspacing=\"0\" cellpadding=\"0\" style=\"${BG}\"><tr>"
+
+if [[ "$COUNT" == "0" ]]; then
+    echo "$DIVSTYLE$DIVHEADER</tr></table>" 
+else
+    echo "$DIVSTYLE$DIVHEADER$MAIL</tr></table>"
+fi

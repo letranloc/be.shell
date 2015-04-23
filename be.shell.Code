@@ -9,13 +9,13 @@ TrashCan=false
 TrashSize=64
 TrashX=249
 TrashY=102
-Wallpaper=/home/nemo/immagini/sfondi/aperture/Aperture-Science-Innovators-ipad-3-wallpaper-ipad-wallpaper-retina-display-wallpaper-the-new-ipad-wallpaper--1920x1200.jpg
+Wallpaper=/home/nemo/.kde4/share/apps/be.shell/Themes/Code/wall.jpg
 WallpaperAlign=132
 WallpaperAspect=-1
 WallpaperMode=7
 
 [BE::Shell]
-Panels=MusicPanel,ConnectPanel,TopPanel,BottomPanel
+Panels=MusicPanel,TopPanel,BottomPanel
 Theme=Code
 
 [BottomPanel]
@@ -37,21 +37,6 @@ Visible=true
 Pattern='<html>'ddd hh:mm ap'</html>'
 Type=Clock
 
-[ConnectPanel]
-Applets=Stretch,kdeconnect
-BlurRadius=0
-CastShadow=false
-Frozen=true
-Id=MusicPanel
-Layer=0
-Length=35
-Offset=65
-Position=0
-Screen=-1
-Size=55
-Struts=false
-Visible=true
-
 [MusicPanel]
 Applets=Stretch,mpc,Stretch
 BlurRadius=0
@@ -68,7 +53,7 @@ Struts=false
 Visible=true
 
 [TopPanel]
-Applets=start,GlobalMenu,Stretch,mail,upico,info,bitbucket,drive,mediatray,Volume,tray,Clock,pager
+Applets=start,GlobalMenu,Stretch,mail,upico,info,github,drive,mediatray,Volume,tray,Clock,pager
 BlurRadius=0
 CastShadow=false
 Frozen=false
@@ -82,43 +67,18 @@ Size=35
 Struts=true
 Visible=true
 
-[TrashCan]
-Mode=0
-Type=Trash
-
 [Volume]
 Channel=Master
 MixerCommand=kmix
 Step=5%
 Type=Volume
 
-[aur]
-Active=true
-Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet aur
-PermittedCommands=konsole -e cower -ud -t $HOME/AUR
-PollInterval=100000
-Type=Label
-
-[bitbucket]
-Exec=konsole --hold -e "zsh -c 'git -C $HOME/project/archlinux init';zsh -c 'cd $HOME/project/archlinux'"
+[github]
+Exec=konsole --hold -e "zsh -c 'git -C $HOME/project/Bedesk/be.shell init';zsh -c 'cd $HOME/project/Bedesk/be.shell'"
 Icon=github
-Label=Bitbucket
+Label=Github
 Mode=0
 Type=Button
-
-[chromium]
-Exec=chromium
-Icon=chromium
-Label=Chromium
-Mode=1
-Type=Button
-
-[cover]
-Active=true
-Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet cover
-PermittedCommands=mpc toggle,konsole -e ncmpcpp
-PollInterval=1000
-Type=Label
 
 [dolphin]
 Exec=dolphin
@@ -152,13 +112,6 @@ Label=Kate
 Mode=1
 Type=Button
 
-[kdeconnect]
-Active=True
-Exec=python2 $HOME/.kde4/share/apps/be.shell/Scripts/kdeconnect.py
-PermittedCommands=dbus
-PollInterval=100000
-Type=Label
-
 [kompare]
 Exec=kompare
 Icon=kompare
@@ -190,7 +143,7 @@ Type=Button
 [mail]
 Active=true
 Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet mail
-PermittedCommands=konsole -e mutt,kmail
+PermittedCommands=konsole -e mutt
 PollInterval=1000
 Type=Label
 
@@ -200,13 +153,10 @@ Type=MediaTray
 
 [mpc]
 Active=true
-Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet mpc
-PermittedCommands=mpc toggle,konsole -e ncmpcpp
+Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet mpc mpc
+PermittedCommands=mpc toggle,cantata
 PollInterval=1000
 Type=Label
-
-[runner]
-DBus=session;org.kde.be.shell;/Runner;org.kde.be.shell;togglePopup;$x;$y
 
 [spacer]
 Type=Stretch
@@ -220,7 +170,7 @@ Type=SessionButton
 [tasks]
 AlwaysGroup=true
 ButtonMode=1
-Buttons=dolphin,chromium,konsole,kate,kompare,konversation,ktorrent
+Buttons=dolphin,firefox,konsole,kate,kompare,konversation,ktorrent
 OnlyCurrentDesk=false
 OnlyCurrentScreen=false
 OnlyMinimized=false
@@ -230,7 +180,7 @@ Type=TaskBar
 [tray]
 FallbackIcons=Applet NetworkManager,kmix,ktorrent,wicd-client.py
 IconSize=19
-NastyIcons=Applet NetworkManager,Fcitx Tray Window,klipper,knotes,korgac
+NastyIcons=Applet NetworkManager,Fcitx Tray Window,klipper,kmix,knotes,korgac
 Spacing=4
 Type=Systray
 

@@ -36,12 +36,12 @@
 
 /* Fix for simple applets*/
 
+.BE--Task, .BE--GMenu QMenuBar { background-color: transparent; } /* fix for DSP */
 #start { background-color: transparent; border: none; max-width:24; padding: 0 0 0 2; }
 #upico { background-color: transparent; padding: 0 2 0 0; color: rgb(0,0,0); max-width: 22px; }
 #mail { background-color: transparent; padding: 0 2 0 0; color: rgb(0,0,0); max-width: 22px; }
 #mpc { background-color: rgba(66,67,83,220); border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; padding: 24 2 4 2; font: 9pt robotolight; color: rgba(214,214,214,255); }
 #wifi { background-color: transparent; padding: 0 2 0 2; margin: 0 0 0 0; max-width:24px; border: none; }
-#tasks { background-color: transparent; }
 #drive { background-color: transparent; border: none; max-width: 20; padding: 0 0 0 0; }
 #github { background-color: transparent; border: none; max-width: 20; padding: 0 4 0 2; }
 #tray { background-color: transparent; border: none; padding: 0 0 0 4; }

@@ -21,6 +21,7 @@ declare -f usage
 declare -f choice
 declare -f backup
 declare -f confirm
+declare -f kdeColors
 declare -f term_colors
 declare -f install
 declare -f isRunning
@@ -113,6 +114,28 @@ esac
     
 }
 
+kdeColors(){
+python - <<END
+try:
+  from PyKDE4.kdeui import KGlobalSettings
+  from PyKDE4.kdecore import KConfig, KConfigGroup
+except ImportError:
+    raise ImportError('In order to install KDE colorschemes automatically you need PyKde4 installed')
+
+scheme = KConfig('$endSchema')
+kdeglobals = KConfig('kdeglobals')
+for groupName in scheme.groupList():
+            group = scheme.group(groupName)
+            global_group = kdeglobals.group(groupName)
+            for (k, v) in group.entryMap().items():
+                global_group.writeEntry(k, v)
+               
+kdeglobals.sync()
+kGlobalSettings = KGlobalSettings.self()
+kGlobalSettings.emitChange(KGlobalSettings.PaletteChanged)
+END
+}
+
 term_colors(){
 
 if [[ ! -d "$chosenTheme/extra" ]]; then
@@ -129,6 +152,17 @@ if [[ -n "$myColors" ]]; then
    cp "${myColors}" "${konsoleDir}"
    kwriteconfig --file "${konsoleDir}/${defProfile}" --group Appearance --key ColorScheme "${cScheme}"
    konsoleprofile colors="${cScheme}"
+fi
+
+local kdeSchema="$(find "$chosenTheme/extra" -name "*.colors" )"
+local colorsDir="$kdeDir/apps/color-schemes"
+local schemaName="${kdeSchema##*/}"
+endSchema="${colorsDir}/${schemaName}"
+
+if [[ -n "$kdeSchema" ]]; then
+   echo -e "\nSetting KDE colorscheme"
+   cp "${kdeSchema}" "${colorsDir}"
+   kdeColors
 fi
 
 }
@@ -217,6 +251,9 @@ case $1 in
         ;;
     -r | --reload)
         isRunning
+        ;;
+    -k)
+        kdeColors
         ;;
      *) 
         usage

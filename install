@@ -22,7 +22,7 @@ declare -f choice
 declare -f backup
 declare -f confirm
 declare -f kdeColors
-declare -f term_colors
+declare -f extra
 declare -f install
 declare -f isRunning
 declare -f main
@@ -120,7 +120,7 @@ try:
   from PyKDE4.kdeui import KGlobalSettings
   from PyKDE4.kdecore import KConfig, KConfigGroup
 except ImportError:
-    raise ImportError('In order to install KDE colorschemes automatically you need PyKde4 installed')
+    raise ImportError('In order to install KDE colorschemes automatically you need PyKDE4 installed')
 
 scheme = KConfig('$endSchema')
 kdeglobals = KConfig('kdeglobals')
@@ -136,7 +136,7 @@ kGlobalSettings.emitChange(KGlobalSettings.PaletteChanged)
 END
 }
 
-term_colors(){
+extra(){
 
 if [[ ! -d "$chosenTheme/extra" ]]; then
    return
@@ -232,7 +232,7 @@ if [ -z "$1" -o "$1" == "-p" -o "$1" == "--preset" ]; then
       sleep 0.5; install    
     fi
     sleep 0.5; isRunning
-    sleep 0.5; term_colors 
+    sleep 0.5; extra 
     echo -e "\nSetting Wallpaper"
     sleep 2; find "$chosenTheme" -iname "wall*" -exec be.shell --setWallpaper {} \; &> /dev/null
     echo -e "\n\e[34mDone!\e[0m"
@@ -251,9 +251,6 @@ case $1 in
         ;;
     -r | --reload)
         isRunning
-        ;;
-    -k)
-        kdeColors
         ;;
      *) 
         usage

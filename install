@@ -114,7 +114,10 @@ esac
     
 }
 
-kdeColors(){
+kdeColors(){ 
+
+#unfortunately bash can't handle this 
+
 python - <<END
 try:
   from PyKDE4.kdeui import KGlobalSettings
@@ -134,9 +137,12 @@ kdeglobals.sync()
 kGlobalSettings = KGlobalSettings.self()
 kGlobalSettings.emitChange(KGlobalSettings.PaletteChanged)
 END
+
 }
 
 extra(){
+
+#Installing goodies if provided
 
 if [[ ! -d "$chosenTheme/extra" ]]; then
    return

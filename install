@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-#Test2
 #Generic installation script for BE::Shell themes and configs by Hombremaledicto.
 #This script should not be executed as root:
 
@@ -120,12 +119,12 @@ if [[ ! -d "$chosenTheme/extra" ]]; then
    return
 fi
 
-local myColors=$(find "$chosenTheme/extra" -name "*.colorscheme" ) 
+local myColors="$(find "$chosenTheme/extra" -name "*.colorscheme" )"
 local cScheme="$(kreadconfig --file "${myColors}" --group General --key Description)"
 local konsoleDir="$kdeDir/apps/konsole"
 local defProfile="$(kreadconfig --file konsolerc --group Desktop\ Entry --key DefaultProfile)"
 
- if [[ -n "$myColors" ]]; then
+if [[ -n "$myColors" ]]; then
    echo -e "\nSetting konsole colorscheme"
    cp "${myColors}" "${konsoleDir}"
    kwriteconfig --file "${konsoleDir}/${defProfile}" --group Appearance --key ColorScheme "${cScheme}"

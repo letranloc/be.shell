@@ -123,7 +123,7 @@ try:
   from PyKDE4.kdeui import KGlobalSettings
   from PyKDE4.kdecore import KConfig, KConfigGroup
 except ImportError:
-    raise ImportError('In order to install KDE colorschemes automatically you need PyKDE4 installed')
+    raise ImportError('In order to apply KDE colorschemes automatically you need python KDE bindings installed')
 
 scheme = KConfig('$endSchema')
 kdeglobals = KConfig('kdeglobals')
@@ -147,7 +147,7 @@ extra(){
 if [[ ! -d "$chosenTheme/extra" ]]; then
    return
 fi
-
+#Colors for konsole
 local myColors="$(find "$chosenTheme/extra" -name "*.colorscheme" )"
 local cScheme="$(kreadconfig --file "${myColors}" --group General --key Description)"
 local konsoleDir="$kdeDir/apps/konsole"
@@ -159,7 +159,7 @@ if [[ -n "$myColors" ]]; then
    kwriteconfig --file "${konsoleDir}/${defProfile}" --group Appearance --key ColorScheme "${cScheme}"
    konsoleprofile colors="${cScheme}"
 fi
-
+#Colors for KDE
 local kdeSchema="$(find "$chosenTheme/extra" -name "*.colors" )"
 local colorsDir="$kdeDir/apps/color-schemes"
 local schemaName="${kdeSchema##*/}"

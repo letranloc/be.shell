@@ -120,7 +120,7 @@ try:
   from PyKDE4.kdeui import KGlobalSettings
   from PyKDE4.kdecore import KConfig, KConfigGroup
 except ImportError:
-    raise ImportError('In order to install KDE colorschemes automatically you need PyKde4 installed')
+    raise ImportError('In order to install KDE colorschemes automatically you need PyKDE4 installed')
 
 scheme = KConfig('$endSchema')
 kdeglobals = KConfig('kdeglobals')
@@ -251,9 +251,6 @@ case $1 in
         ;;
     -r | --reload)
         isRunning
-        ;;
-    -k)
-        kdeColors
         ;;
      *) 
         usage

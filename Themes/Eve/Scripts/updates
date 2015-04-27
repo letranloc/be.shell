@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# var markup for update. Should work with every distro into the applet script
+
+BG="background-color: transparent"
+UPDATE="<a href=\"exec:konsole -e sudo pacman -Syyu\"><img src=\"$THEMEDIR/TopPanel/update.png\"width=\"18\"></a>"
+DIVHEADER="<table valign=\"middle\" cellspacing=\"0\" cellpadding=\"0\" style=\"${BG}\"><tr>"
+
+if [ $UPR == 0 ]; then
+    echo "$DIVSTYLE$DIVHEADER</tr></table>"
+  else
+    echo "$DIVSTYLE$DIVHEADER$UPDATE</tr></table>"
+fi

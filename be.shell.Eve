@@ -53,7 +53,7 @@ Struts=true
 Visible=true
 
 [TopPanel]
-Applets=start,GlobalMenu,Stretch,kdeconnect,mail,upico,bitbucket,drive,mediatray,Volume,wifi
+Applets=start,GlobalMenu,Stretch,mail,upico,drive,mediatray,Volume
 BlurRadius=0
 CastShadow=false
 Frozen=false
@@ -92,38 +92,17 @@ MixerCommand=kmix
 Step=5%
 Type=Volume
 
-[chromium]
-Exec=chromium
-Icon=chromium
-Label=Chromium
-Mode=0
-Type=Button
-
 [cover]
 Active=true
-Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet cover
-PermittedCommands=mpc toggle,konsole -e ncmpcpp
+Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet mpc cover
+PermittedCommands=mpc toggle,cantata
 PollInterval=1000
 Type=Label
 
-[dino]
-Exec=dino
-Icon=dino
-Label=Dino
-Mode=0
-Type=Button
-
 [dolphin]
 Exec=dolphin
-Icon=dolphin
+Icon=system-file-manager
 Label=Dolphin
-Mode=0
-Type=Button
-
-[meld]
-Exec=meld
-Icon=meld
-Label=Meld
 Mode=0
 Type=Button
 
@@ -134,33 +113,12 @@ Label=Firefox
 Mode=0
 Type=Button
 
-[guitarpro]
-Exec=/opt/GuitarPro6/gp-launcher.sh
-Icon=guitarpro
-Label=Guitar GuitarPro6
-Mode=0
-Type=Button
-
 [kate]
 Exec=kate
 Icon=kate
 Label=Kate
 Mode=0
 Type=Button
-
-[bitbucket]
-Exec=konsole --hold -e "zsh -c 'git -C $HOME/project/archlinux init';zsh -c 'cd $HOME/project/archlinux'"
-Icon=github
-Label=Bitbucket
-Mode=0
-Type=Button
-
-[kdeconnect]
-Active=True
-Exec=python2 $HOME/.kde4/share/apps/be.shell/Scripts/kdeconnect.py
-PermittedCommands=dbus
-PollInterval=100000
-Type=Label
 
 [kmail]
 Exec=kmail
@@ -169,16 +127,9 @@ Label=Kmail
 Mode=0
 Type=Button
 
-[konqueror]
-Exec=konqueror
-Icon=konqueror
-Label=Konqueror
-Mode=0
-Type=Button
-
 [konsole]
 Exec=konsole
-Icon=konsole
+Icon=utilities-terminal
 Label=Konsole
 Mode=0
 Type=Button
@@ -208,15 +159,9 @@ Type=Label
 Icon=media-eject
 Type=MediaTray
 
-[monitor]
-Exec=ksysguard
-Icon=ksysguard
-Mode=0
-Type=Button
-
 [mpc]
 Active=true
-Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet mpc
+Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet mpc mpc
 PermittedCommands=mpc toggle,konsole -e ncmpcpp
 PollInterval=1000
 Type=Label
@@ -225,6 +170,7 @@ Type=Label
 Exec=konsole -hold -e grive -p $HOME/drive
 Icon=drive
 Label=Drive
+IconSize=16
 Mode=0
 Type=Button
 
@@ -237,17 +183,10 @@ Label=start
 Mode=0
 Type=SessionButton
 
-[steam]
-Exec=steam
-Icon=steam
-Label=Steam
-Mode=0
-Type=Button
-
 [tasks]
 AlwaysGroup=true
 ButtonMode=0
-Buttons=dolphin,firefox,konsole,kate,meld,ktorrent,kmail,vlc,konversation,spotify
+Buttons=dolphin,firefox,konsole,kate,ktorrent,kmail,konversation
 OnlyCurrentDesk=false
 OnlyCurrentScreen=false
 OnlyMinimized=false
@@ -257,7 +196,7 @@ Type=TaskBar
 [tray]
 FallbackIcons=kmix,ktorrent,wicd-client.py
 IconSize=20
-NastyIcons=Applet NetworkManager,Fcitx Tray Window,klipper,knotes,korgac
+NastyIcons=Applet NetworkManager,Fcitx Tray Window,klipper,knotes,korgac,kmix
 Spacing=2
 Type=Systray
 
@@ -266,24 +205,4 @@ Active=true
 Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet up
 PermittedCommands=konsole -e yaourt -Syyua --ignore linux-ck --ignore linux-ck-headers
 PollInterval=100000
-Type=Label
-
-[vlc]
-Exec=vlc
-Icon=vlc
-Label=Vlc
-Mode=0
-Type=Button
-
-[spotify]
-Exec=spotify
-Icon=spotify
-Label=Spotify
-Mode=0
-Type=Button
-
-[wifi]
-Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet wifi
-PermittedCommands=konsole -e wicd-curses
-PollInterval=100
 Type=Label

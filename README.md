@@ -22,7 +22,6 @@ To see the themes available in this repo, check our [gallery](https://github.com
 
 *Notice!* The script does not install menus and scripts, check the section below for them!
 
-    chmod 777 install
     ./install
     
 Or, alternatively, you can skip the list of available presets and specify directly the one you want, passing its name after the -p argument - e.g. for be.shell.Vertex :

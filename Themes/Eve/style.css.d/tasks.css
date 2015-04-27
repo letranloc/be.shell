@@ -1,9 +1,15 @@
 /*  Start Button, TaskBar  and Trash */
 
 #TrashCan { background-color: rgb(156,156,156); margin: 0 2 0 0; padding: 0 0 0 0; max-width: 50px; }
+
 .BE--Task, #NoTask, #OneTask:checked, #starter { max-width: 50px; margin: 0 0 0 0; border: none; }  
+
 .BE--Task:hover, .BE--Trash:hover { background-color: rgb(120,120,120); }
+
 #OneTask { background-color: rgb(180,180,180); }
+
 #OneTask:checked { background-color: rgb(150,150,150); }
+
 #OneTask[windowMinimized="true"] { background-color: rgb(110,110,110); }
+
 #ManyTasks[windowMinimized="true"] { background-color: rgb(110,110,110); }

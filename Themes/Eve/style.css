@@ -7,13 +7,16 @@
 /* Here starts the panels config*/
 
 #TopPanel { background-color: rgb(255,255,255); margin: 4 0 0 4; }
+
 #ClockPanel { background-color: rgb(50,50,50); margin: 4 0 0 2; }
+
 #Uberbar { background-color: rgb(180,180,180); margin: 4 4 0 1; }
+
 #BottomPanel { border: none; margin: 0 0 4 0; }
 
 /* Various Applets & fixes */
 
-.BE--Volume { background-color: transparent; padding: 0 0 0 0; max-width:16px; }
+.BE--Volume { background-color: transparent; padding: 0 0 0 0; margin: 0 4 0 0; min-width: 16px; }
 .BE--MediaTray { background-color: transparent; padding: 0 4 2 4; }
 .BE--MediaTray QToolButton { background-color: transparent; border: none; padding: 0 0 0 0; max-width:14px; }
 .BE--Clock { background-color: transparent; padding: 0 4 1 4; font: 10pt robotolight; color: rgb(246,246,246); }
@@ -25,9 +28,6 @@
 #upico { background-color: transparent; padding: 0 0 0 2; color: rgb(0,0,0); }
 #mail { background-color: transparent; padding: 0 0 0 0; color: rgb(0,0,0); }
 #mpc { background-color: rgb(50,50,50); padding: 0 0 0 2; font: 9pt robotolight; color: rgb(246,246,246); }
-#wifi { background-color: transparent; padding: 0 2 0 0; margin: 0 0 0 0; max-width:22px; border: none; }
 #tasks { background-color: rgb(214,214,214); }
 #cover { background-color: rgb(50,50,50); margin: 0 0 0 2; }
-#kdeconnect { background-color: transparent; color: rgb(0,0,0); padding: 0 2 0 0; }
-#drive { background-color: transparent; border: none; max-width: 16; padding: 0 0 0 0; }
-#bitbucket { background-color: transparent; border: none; max-width: 16; padding: 0 4 0 2; }
+#drive { background-color: transparent; border: none; padding: 0 0 0 0; }

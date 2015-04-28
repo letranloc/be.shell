@@ -123,7 +123,7 @@ try:
   from PyKDE4.kdeui import KGlobalSettings
   from PyKDE4.kdecore import KConfig, KConfigGroup
 except ImportError:
-    raise ImportError('In order to install KDE colorschemes automatically you need PyKDE4 installed')
+  raise ImportError('In order to install KDE colorschemes automatically you need PyKDE4 installed')
 
 scheme = KConfig('$endSchema')
 kdeglobals = KConfig('kdeglobals')
@@ -150,13 +150,17 @@ fi
 
 local myColors="$(find "$chosenTheme/extra" -name "*.colorscheme" )"
 local cScheme="${myColors##*/}"
-local konsoleDir="$kdeDir/apps/konsole"
-local defProfile="$(kreadconfig --file konsolerc --group Desktop\ Entry --key DefaultProfile)"
+local konsoleVersion="$(konsole --version | awk 'NR == 2 {print $2}')"
 
-if [[ -n "$myColors" ]]; then
-   echo -e "\nSetting konsole colorscheme"
-   cp "${myColors}" "${konsoleDir}"
-   kwriteconfig --file "${konsoleDir}/${defProfile}" --group Appearance --key ColorScheme "${cScheme%.*}"
+if [[ -n "$myColors" && "$konsoleVersion" == "Frameworks:" ]]; then
+   echo -e "\nSetting konsole colorscheme" && cp "${myColors}" "$HOME/.local/share/konsole"
+   defProfile="$(kreadconfig5 --file konsolerc --group Desktop\ Entry --key DefaultProfile)"
+   kwriteconfig5 --file "$HOME/.local/share/konsole/${defProfile}" --group Appearance --key ColorScheme "${cScheme%.*}"
+   konsoleprofile colors="${cScheme%.*}"
+elif [[ -n "$myColors" && "$konsoleVersion" != "Frameworks:" ]]; then
+   echo -e "\nSetting konsole colorscheme" && cp "${myColors}" "$kdeDir/apps/konsole"
+   defProfile="$(kreadconfig --file konsolerc --group Desktop\ Entry --key DefaultProfile)"
+   kwriteconfig --file "$kdeDir/apps/konsole/${defProfile}" --group Appearance --key ColorScheme "${cScheme%.*}"
    konsoleprofile colors="${cScheme%.*}"
 fi
 
@@ -202,8 +206,14 @@ fi
 
 isRunning(){
 
-local pShell="plasma-desktop"
+local pShell
 local bShell="be.shell"
+
+if [[ $(echo $KDE_SESSION_VERSION) == "4" ]]; then
+    pShell="plasma-desktop"
+else
+    pShell="plasmashell"
+fi
 
 if [[  -z $(pidof "$pShell") ]]; then
     if [[ ! -z $(pidof "$bShell") ]]; then

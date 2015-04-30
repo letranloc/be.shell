@@ -23,6 +23,7 @@ declare -f backup
 declare -f confirm
 declare -f kdeColors
 declare -f extra
+declare -f scriptDir
 declare -f install
 declare -f isRunning
 declare -f main
@@ -178,6 +179,19 @@ fi
 
 }
 
+scriptDir(){
+
+#TODO! use diff to check if files differ, in order to update to latest versions.
+#Use confirm to avoid overriding users' modifications.
+
+if [[ ! -d "$HOME/.local/share/be.shell" ]]; then
+     mkdir -p "$HOME/.local/share/be.shell"
+     cp -r Scripts "$HOME/.local/share/be.shell/Scripts"
+     chmod -R 777 "$HOME"/.local/share/be.shell/Scripts/*
+fi
+
+}
+
 install(){
 
 #Might be this is a fresh installation
@@ -248,6 +262,7 @@ if [ -z "$1" -o "$1" == "-p" -o "$1" == "--preset" ]; then
      else
       sleep 0.5; install    
     fi
+    scriptDir
     sleep 0.5; isRunning
     sleep 0.5; extra 
     echo -e "\nSetting Wallpaper"
@@ -268,6 +283,9 @@ case $1 in
         ;;
     -r | --reload)
         isRunning
+        ;;
+    -s | --scripts)
+        scriptDir
         ;;
      *) 
         usage

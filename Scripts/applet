@@ -79,7 +79,9 @@ updates(){
 
 myOutputFile="$THEMEDIR/Scripts/updates" 
 
-#Need to test this and write something for zypper (suse)
+#Need to test this and write something for zypper (suse), verificato che zypper probabilmente può interrogare il database
+#solo con accesso root es. # zypper lu restituisce la lista degli aggiornamenti. Da verificare se esiste un workaround
+#per questo problema
 if hash aptitude 2>/dev/null; then  #deb based distros
     UPR=$( aptitude search "~U" | wc -l )
 elif hash yum 2>/dev/null; then #fedora, probably broken
@@ -90,6 +92,14 @@ else #Arch
 fi
 
 source "${myOutputFile}"
+
+}
+
+backup(){
+
+myOutputFile="$THEMEDIR/Scripts/backup"
+
+
 
 }
 

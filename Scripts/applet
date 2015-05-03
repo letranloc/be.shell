@@ -142,6 +142,9 @@ case $1 in
     up)
         updates
         ;;
+    backup)
+        backup
+        ;;
     wifi)
         wifi
         ;;

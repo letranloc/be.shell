@@ -1,0 +1,35 @@
+#! /bin/bash
+# Based of http://www.dei.unipd.it/~sbologna/backupinlinux3.html and
+# modified from Andrea Calzavacca (paranoid.nemo@gmail.com)
+# Create a incremental daily backup every time a day passed without any.
+# Every week create an additional weekly backup.
+
+log=~/.backup.log
+today=`date "+%Y%m%d"`
+config=~/.local/share/be.shell/Scripts/rsnapshot.conf
+
+# create daily timestamp
+daily_timestamp=~/.backup_daily_timestamp
+last_daily_backup=`stat --format=%y $daily_timestamp | tr -d - | awk '{print $1}'`
+
+# create weekly timestamp
+weekly_timestamp=~/.backup_weekly_timestamp
+last_weekly_backup=`stat --format=%y $weekly_timestamp | tr -d - | awk '{print $1}'`
+
+date >> $log
+  if (( $today <= $last_daily_backup )); then
+    
+    exit 0;
+    
+  fi
+  
+    echo "    1 day passed: starting backup..." >> $log
+    
+  if (( $today - $last_daily_backup >= 7 )); then
+  
+    echo "    7 giorni sono passati: inizio il backup..." >> $log 
+    /usr/bin/rsnapshot -c $config -v weekly && touch $weekly_timestamp && echo "WEEKLY ok!" >> $log
+
+  fi
+  
+  rm ~/.pkglist.lst && rm ~/.pkglist_AUR.lst && pacman -Qqe | grep -vx "$(pacman -Qqm)" > ~/.pkglist.lst && pacman -Qqm > ~/.pkglist_AUR.lst && /usr/bin/rsnapshot -c $config -v daily && touch $daily_timestamp && echo "DAILY ok!" >> $log

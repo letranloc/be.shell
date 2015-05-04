@@ -9,12 +9,13 @@ today=`date "+%Y%m%d"`
 config=~/.local/share/be.shell/Scripts/rsnapshot.conf
 
 daily_timestamp=~/.backup_daily_timestamp
-last_daily_backup=`stat --format=%y $daily_timestamp | tr -d - | awk '{print $1}'`
 
 weekly_timestamp=~/.backup_weekly_timestamp
-last_weekly_backup=`stat --format=%y $weekly_timestamp | tr -d - | awk '{print $1}'`
 
 if [ -e $daily_timestamp ]; then
+
+last_daily_backup=`stat --format=%y $daily_timestamp | tr -d - | awk '{print $1}'`
+last_weekly_backup=`stat --format=%y $weekly_timestamp | tr -d - | awk '{print $1}'`
 
   date >> $log
     if (( $today <= $last_daily_backup )); then
@@ -28,15 +29,17 @@ if [ -e $daily_timestamp ]; then
     if (( $today - $last_daily_backup >= 7 )); then
   
       echo "    7 giorni sono passati: inizio il backup..." >> $log 
-      /usr/bin/rsnapshot -c $config -v weekly && touch $weekly_timestamp && echo "WEEKLY ok!" >> $log
+      /usr/bin/rsnapshot -c $config -v weekly && touch $weekly_timestamp && echo "WEEKLY ok!" >> $log && notify-send "Weekly backup finished"
 
     fi
   
-    rm ~/.pkglist.lst && rm ~/.pkglist_AUR.lst && pacman -Qqe | grep -vx "$(pacman -Qqm)" > ~/.pkglist.lst && pacman -Qqm > ~/.pkglist_AUR.lst && /usr/bin/rsnapshot -c $config -v daily && echo $today >> $daily_timestamp && echo "DAILY ok!" >> $log
+    rm ~/.pkglist.lst && rm ~/.pkglist_AUR.lst && pacman -Qqe | grep -vx "$(pacman -Qqm)" > ~/.pkglist.lst && pacman -Qqm > ~/.pkglist_AUR.lst && /usr/bin/rsnapshot -c $config -v daily && echo $today >> $daily_timestamp && echo "DAILY ok!" >> $log && notify-send "Daily backup finished"
 
 else
 
   echo $today >> $daily_timestamp
+  echo $today >> $weekly_timestamp
+  echo "First timestamps created - Run the script again to create the first backup"
 
 fi
   

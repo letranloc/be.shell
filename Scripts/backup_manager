@@ -28,12 +28,12 @@ last_weekly_backup=`stat --format=%y $weekly_timestamp | tr -d - | awk '{print $
     
     if (( $today - $last_daily_backup >= 7 )); then
   
-      echo "    7 giorni sono passati: inizio il backup..." >> $log 
-      /usr/bin/rsnapshot -c $config -v weekly && touch $weekly_timestamp && echo "WEEKLY ok!" >> $log && notify-send "Weekly backup finished"
+      echo "    7 days passed: starting backup..." >> $log 
+      /usr/bin/rsnapshot -c $config weekly && touch $weekly_timestamp && echo "WEEKLY ok!" >> $log && notify-send "Weekly backup finished"
 
     fi
   
-    rm ~/.pkglist.lst && rm ~/.pkglist_AUR.lst && pacman -Qqe | grep -vx "$(pacman -Qqm)" > ~/.pkglist.lst && pacman -Qqm > ~/.pkglist_AUR.lst && /usr/bin/rsnapshot -c $config -v daily && echo $today >> $daily_timestamp && echo "DAILY ok!" >> $log && notify-send "Daily backup finished"
+    rm ~/.pkglist.lst && rm ~/.pkglist_AUR.lst && pacman -Qqe | grep -vx "$(pacman -Qqm)" > ~/.pkglist.lst && pacman -Qqm > ~/.pkglist_AUR.lst && /usr/bin/rsnapshot -c $config daily && echo $today >> $daily_timestamp && echo "DAILY ok!" >> $log && notify-send "Daily backup finished"
 
 else
 

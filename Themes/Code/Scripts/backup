@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+if [[ -d "$DIR" ]]; then
+output="\
+<table valign=\"middle\" cellspacing=\"0\" cellpadding=\"0\" style=\"background:${TABLEBG};\">
+  <tr>
+   <td> $BAK </td>
+  </tr>
+</table>"
+else
+output="\
+<table valign=\"middle\" cellspacing=\"0\" cellpadding=\"0\" style=\"background:${TABLEBG};\">
+  <tr>
+   <td> $NOBAK </td>
+  </tr>
+</table>"
+
+fi
+
+echo "$output"

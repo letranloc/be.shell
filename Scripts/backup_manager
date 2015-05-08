@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 # Based of http://www.dei.unipd.it/~sbologna/backupinlinux3.html and
 # modified from Andrea Calzavacca (paranoid.nemo@gmail.com)
 # Create a incremental daily backup every time a day passed without any.

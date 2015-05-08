@@ -58,11 +58,22 @@ If you're already on BE::Shell, restart it in order to apply the new theme & con
 Menus & scripts
 -----
 
+You need to create a be.shell folder at first under ~/.local/share (we agreed for this convention, to avoid issues with different KDE4 local configs paths):
+
+    mkdir -p ~/.local/share/be.shell
+
 Copy the folders Menu, Scripts and the MainMenu.xml file:
 
-    cp -R Menu Scripts MainMenu.xml `kde4-config --localprefix`/share/apps/be.shell
+    cp -R Menu Scripts ~/.local/share/be.shell
   
 Make the scripts executable:
 
-    chmod -R 777 `kde4-config --localprefix`/share/apps/be.shell/Scripts/*
+    chmod -R 777 ~/.local/share/be.shell/Scripts/*
+    
+Copy the MainMenu.xml under your be.shell config dir:
 
+    cp MainMenu.xml `kde4-config --localprefix/share/apps/be.shell
+    
+And, finally, reload be.shell:
+
+    be.shell --restart

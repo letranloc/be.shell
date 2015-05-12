@@ -99,10 +99,10 @@ backup(){
 
 myOutputFile="$THEMEDIR/Scripts/backup"
 
-DIR="/media/backup"
-ERROR="No backup directory found"
-BAK="<a href=\"exec:$HOME/.local/share/Scripts/backup_manager\"><img src=\"$THEMEDIR/TopPanel/backup.png\"width=\"18\"></a>"
-NOBAK="<a href=\"exec:konsole --hold -e echo $ERROR\"><img src=\"$THEMEDIR/TopPanel/backup.png\"width=\"18\"></a>"
+#DIR="/media/backup"
+#ERROR="No backup directory found"
+#BAK="<a href=\"exec:$HOME/.local/share/Scripts/backup_manager\"><img src=\"$THEMEDIR/TopPanel/backup.png\"width=\"18\"></a>"
+#NOBAK="<a href=\"exec:konsole --hold -e echo $ERROR\"><img src=\"$THEMEDIR/TopPanel/backup.png\"width=\"18\"></a>"
 
 source "${myOutputFile}"
 

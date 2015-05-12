@@ -2,7 +2,7 @@ Introduction
 =====
 
 The [Bedeveil](https://github.com/Bedevil) group contains Themes and Features for BE::Shell, developed to costumize the user experience as much as we can.  
-The master branch of this repo contains all the stable features and completed themes; you can learn how to install, use and modify these reading our [wiki](https://github.com/Bedevil/be.shell/wiki).
+The master branch of this repo contains all the stable features and completed themes; you can learn how to install, use and modify our works by reading our [wiki](https://github.com/Bedevil/be.shell/wiki).
 If you want to learn more about BE::Shell you should also check the [project source page](https://sourceforge.net/projects/be-shell/) and is relative wiki.
 If you want contribute to this project, please use the standard git contribution method - that you can find [here](http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project) - by creating an appropriate pull request.
 
@@ -34,7 +34,7 @@ To see the themes available in this repo, check our [gallery](https://github.com
    
 **By script**
 
-*Notice!* The script does not install menus and scripts, check the section below for them!
+*Notice!* The script does not install menus, check the section below for them!
 
     ./install
     
@@ -59,6 +59,11 @@ Copy the Theme directory:
 Copy the included config file (for example be.shell.Vertex) as be.shell:
 
     cp be.shell.Vertex `kde4-config --localprefix`/share/config/be.shell
+    
+TO install the provided scripts:
+
+    mkdir -p ~/.local/share/be.shell
+    cp -r Scripts ~/.local/share/be.shell && chmod -R 777 ~/.local/share/be.shell/Scripts/*
    
 If you're using Plasma on KDE SC4, kill its process and start BE::Shell:
 
@@ -73,20 +78,16 @@ If you're already on BE::Shell, restart it in order to apply the new theme & con
     be.shell --restart
    
    
-Menus & scripts
+Menus
 -----
 
-You need to create a be.shell folder at first under ~/.local/share (we agreed for this convention, to avoid issues with different KDE4 local configs paths):
+If you used the provided install script, you need to create a be.shell folder at first under ~/.local/share (we agreed for this convention, to avoid issues with different KDE4 local configs paths):
 
     mkdir -p ~/.local/share/be.shell
 
-Copy the folders Menu and Scripts inside of the newly created directory:
+Copy the folder 'Menu' inside of the newly created directory:
 
-    cp -R Menu Scripts ~/.local/share/be.shell
-  
-Make the scripts executable:
-
-    chmod -R 777 ~/.local/share/be.shell/Scripts/*
+    cp -r Menu ~/.local/share/be.shell
     
 Copy the MainMenu.xml under your be.shell config dir:
 

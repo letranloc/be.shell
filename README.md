@@ -34,7 +34,7 @@ To see the themes available in this repo, check our [gallery](https://github.com
    
 **By script**
 
-*Notice!* The script does not install menus, check the section below for them!
+*Notice!* The script does not install menus yet, check the [section below](https://github.com/Bedevil/be.shell#menus) for them!
 
     ./install
     

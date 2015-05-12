@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+DIR="/media/backup"
+BAK="/usr/bin/bash $HOME/.local/share/Scripts/backup_manager"
+NOBAK="konsole --hold -e echo No backup directory found"
+
+if [[ -d "$DIR" ]]; then
+    
+  $BAK
+    
+else
+
+  $NOBAK
+
+fi

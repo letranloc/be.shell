@@ -1,9 +1,16 @@
-The [Bedeveil](https://github.com/Bedevil) group contains Themes and Features for BE::Shell, developed to costumize the user experience as much as we can. The master branch on this repo contains all stable features and completed themes; you can learn how to install, use and modify those reading the [wiki](https://github.com/Bedevil/be.shell/wiki) realtive page.
+Introduction
+=====
+
+The [Bedeveil](https://github.com/Bedevil) group contains Themes and Features for BE::Shell, developed to costumize the user experience as much as we can.  
+The master branch of this repo contains all the stable features and completed themes; you can learn how to install, use and modify these reading our [wiki](https://github.com/Bedevil/be.shell/wiki).
 If you want to learn more about BE::Shell you should also check the [project source page](https://sourceforge.net/projects/be-shell/) and is relative wiki.
-If you want contribute to this project please use the standard git contribution method that you can find [here](http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project) and making an appropriate pull request.
+If you want contribute to this project, please use the standard git contribution method - that you can find [here](http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project) - by creating an appropriate pull request.
 
-All those works are distribute under GNU GPLv3 license. You can read the terms and condition to the license [here](https://github.com/Bedevil/be.shell/blob/master/LICENSE.md)
+All our works are distributed under the GNU GPLv3 license.  
+You can read the terms and condition to the license [here](https://github.com/Bedevil/be.shell/blob/master/LICENSE.md)
 
+Requirements
+=====
 
 Install [BE::Shell](http://sourceforge.net/p/be-shell/code/ci/master/tree/) or upgrade to the latest commit.
 Themes are made with [QSS](http://qt-project.org/doc/qt-4.8/stylesheet-reference.html) - Qt Style Sheets, while the menu files for the globalmenu applet follow a simple [xml syntax](http://sourceforge.net/p/be-shell/wiki/Menu%20reference/).

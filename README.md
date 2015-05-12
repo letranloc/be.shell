@@ -2,6 +2,8 @@ The [Bedeveil](https://github.com/Bedevil) group contains Themes and Features fo
 If you want to learn more about BE::Shell you should also check the [project source page](https://sourceforge.net/projects/be-shell/) and is relative wiki.
 If you want contribute to this project please use the standard git contribution method that you can find [here](http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project) and making an appropriate pull request.
 
+All those works are under GNU GPLv3. You can read the terms and condition to the license [here](https://github.com/Bedevil/be.shell/blob/master/LICENSE.md)
+
 
 Install [BE::Shell](http://sourceforge.net/p/be-shell/code/ci/master/tree/) or upgrade to the latest commit.
 Themes are made with [QSS](http://qt-project.org/doc/qt-4.8/stylesheet-reference.html) - Qt Style Sheets, while the menu files for the globalmenu applet follow a simple [xml syntax](http://sourceforge.net/p/be-shell/wiki/Menu%20reference/).

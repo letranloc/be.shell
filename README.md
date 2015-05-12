@@ -60,7 +60,7 @@ Copy the included config file (for example be.shell.Vertex) as be.shell:
 
     cp be.shell.Vertex `kde4-config --localprefix`/share/config/be.shell
     
-TO install the provided scripts:
+Install the provided scripts:
 
     mkdir -p ~/.local/share/be.shell
     cp -r Scripts ~/.local/share/be.shell && chmod -R 777 ~/.local/share/be.shell/Scripts/*
@@ -81,7 +81,7 @@ If you're already on BE::Shell, restart it in order to apply the new theme & con
 Menus
 -----
 
-If you used the provided install script, you need to create a be.shell folder at first under ~/.local/share (we agreed for this convention, to avoid issues with different KDE4 local configs paths):
+Whether you used the provied install script or installed the scripts manually, you should have a be.shell folder under ~/.local/share. If not, create it:
 
     mkdir -p ~/.local/share/be.shell
 

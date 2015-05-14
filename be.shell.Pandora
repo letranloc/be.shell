@@ -10,14 +10,14 @@ BlurRadius=20
 Corners=80
 HaloColor=invalid
 IconAreaPaddings=32,32,32,32
-IconPos=9068160:32:498,5ce0d87:32:58,6f3a66:249:278,360a4e5:364:252,96214a7:32:58,1af2f2a:364:155,a316ca0:1208:82,ade2787:249:58,703a66:249:388,37af0c7:32:388,4f480c7:281:543,e8e9c67:32:278,cf1c2a0:1080:82,39710ea:198:543,206f686:249:168,4c3c474:32:155,c850487:32:278,979c267:127:58,3f0a8c7:412:252,1af29ca:364:58,
-IconSize=64
+IconPos=a316ca0:1208:82,cf1c2a0:1080:82,
+IconSize=48
 Rootpaper=true
 ShadowOpacity=20
 ShowIcons=false
 Tint=0,0,0
 TrashCan=false
-Wallpaper=/home/hombre/Immagini/wallhaven-155837.jpg
+Wallpaper=/home/hombre/Downloads/wallhaven-199891.jpg
 WallpaperAlign=132
 WallpaperAspect=-1
 WallpaperDefaultAlign=132
@@ -127,6 +127,7 @@ Exec=$HOME/.local/share/be.shell/Scripts/rss2htm  http://www.phoronix.com/rss.ph
 Lines=25
 PollInterval=30000
 Type=Label
+Wrap=true
 
 [SensorPanel]
 Applets=CalendarLabel
@@ -306,11 +307,6 @@ Mode=0
 ToolTip=Clipboard
 Type=Button
 
-[kmail]
-Icon=internet-mail
-Service=kde4/KMail2
-Type=Button
-
 [konsole]
 Exec=konsole
 Icon=utilities-terminal-emulator
@@ -327,7 +323,7 @@ Type=Button
 
 [ksysguard]
 Exec=ksysguard
-Icon=htop
+Icon=utilities-system-monitor
 Label=System Monitor
 Mode=0
 Type=Button
@@ -391,12 +387,17 @@ Spacing=8
 [tasks]
 AlwaysGroup=True
 ButtonMode=0
-Buttons=dfm,Browser,konsole,kmail,kate,settings,konversation,gwenview,ksysguard,gimp,inkscape,spotify,smplayer
+Buttons=dfm,Browser,konsole,trojita,kate,settings,konversation,gwenview,ksysguard,gimp,inkscape,spotify,smplayer
 IconSize=48
 OnlyCurrentDesk=False
 OnlyMinimized=False
 Spacing=8
 Type=Taskbar
+
+[trojita]
+Icon=internet-mail
+Service=trojita
+Type=Button
 
 [workspace]
 DBus=session;org.kde.kglobalaccel;/component/kwin;org.kde.kglobalaccel.Component;invokeShortcut;ShowDesktopGrid

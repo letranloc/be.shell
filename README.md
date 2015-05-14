@@ -1,13 +1,18 @@
 Introduction
 =====
 
-The [Bedeveil](https://github.com/Bedevil) group contains Themes and Features for BE::Shell, developed to costumize the user experience as much as we can.  
-The master branch of this repo contains all the stable features and completed themes; you can learn how to install, use and modify our works by reading our [wiki](https://github.com/Bedevil/be.shell/wiki).
+The [Bedeveil](https://github.com/Bedevil) group contains Themes and Features for BE::Shell, developed to costumize the user experience as much as we can.
 If you want to learn more about BE::Shell you should also check the [project source page](https://sourceforge.net/projects/be-shell/) and is relative wiki.
-If you want contribute to this project, please use the standard git contribution method - that you can find [here](http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project) - by creating an appropriate pull request.
 
-All our works are distributed under the GNU GPLv3 license.  
-You can read the terms and condition to the license [here](https://github.com/Bedevil/be.shell/blob/master/LICENSE.md)
+Structure and Contributions
+=====
+
+- Master branch contains all the stable features and completed themes.
+- Alpha-features branch is used to start developing new features; the contents of this branch are highly unstable and maybe even dangerous for your system. If you want to propose a new feature please make a [Pull request](http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project#The-GitHub-Flow) under this branch.
+- Beta-features branchs are used to test features introduced and developed under Alpha-features branch before entering into the master branch. The contents may still be not completely stable. If you want test some of this features we will be very glad if you report every issue using the Github dedicate tool.
+- New-themes branch contains the under-development theme. They may be just not test for the standard resolution and change drastically during time. 
+
+If you want contribute to this project, in any of the described branch, please use the standard git contribution method - that you can find [here](http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project) - by creating an appropriate pull request.
 
 Requirements
 =====
@@ -96,3 +101,13 @@ Copy the MainMenu.xml under your be.shell config dir:
 And, finally, reload be.shell:
 
     be.shell --restart
+    
+**Notes** 
+
+If you need more help or if you want to check detailed info of how to use our features or modify our work you should check our [wiki](https://github.com/Bedevil/be.shell/wiki).
+
+License
+=====
+
+All our works are distributed under the GNU GPLv3 license.  
+You can read the terms and condition to the license [here](https://github.com/Bedevil/be.shell/blob/master/LICENSE.md)

@@ -3,20 +3,22 @@
 .BE--Clock {  
       padding: 1 12 0 4;
       font-weight: bold;
-      margin: 0 -2 1 4;
+      margin: 0 -2 0 4;
 }
 
 #Calendar { 
 /*       background-color: rgba(37,37,37,100%); */
+     padding: 0 0 10 0;
 }
 
 #Calendar QTableView {
-      alternate-background-color: rgba(25,28,32,100%);
-      selection-background-color: palette(AlternateBase); /* rgba(49,49,51,100%) */
-      selection-color: rgba(255,255,255,100%);
-      background: rgba(25,28,32,100%);
-      gridline-color: rgb(38,38,38,55);
-      font-size: 10pt; 
+      border: 1px ridge rgba(15,18,22,90%);
+      alternate-background-color: rgba(77,77,77,95%);
+      selection-background-color: palette(highlight); /* rgba(49,49,51,100%) */
+      selection-color: rgba(244,244,244,100%);
+      background: rgba(49,54,59,100%);
+      gridline-color: rgb(38,38,38,50%); /*  rgb(38,38,38,55); */
+      font-size: 9pt; 
       font-weight: normal;
       font-family: HelveticaNeue, Liberation Sans, Nimbus Sans, Arimo, Roboto;
 }
@@ -34,9 +36,36 @@
 /*     border-bottom: 1px solid rgba(95,95,95,255); */
 }
 
-#Calendar #qt_calendar_navigationbar, #Calendar #qt_calendar_navigationbar > * {
-      color: rgba(255,255,255,100%);
+#Calendar #qt_calendar_navigationbar > * {
       font-size: 10pt;
-      padding: 10 5 10 5;
+      padding: 0 0 5 0;
       font-family: HelveticaNeue, Liberation Sans, Nimbus Sans, Arimo, Roboto;
+}
+
+#qt_calendar_saturday {
+      color: blue;
+}
+
+#qt_calendar_monthbutton, #qt_calendar_yearbutton {
+      color: rgba(255,255,255,100%);
+}
+
+#qt_calendar_prevmonth {
+      color: rgba(0,0,0,0);
+      subcontrol-position: margin;
+      image:  url("${base}/background-images/arrow_prev.png");
+      width: 22px;
+      height: 22px;
+}
+
+#qt_calendar_nextmonth {
+      color: rgba(0,0,0,0);
+      subcontrol-position: margin;
+      image:  url("${base}/background-images/arrow_next.png");
+      width: 22px;
+      height: 22px;
+}
+
+#qt_calendar_nextmonth:hover {;
+/*       image:  url("${base}/background-images/arrow_next_active.png"); */
 }

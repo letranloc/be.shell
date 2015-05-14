@@ -114,8 +114,8 @@
 }
 
 #FeedPanel {
-     min-height: 150px;
-     padding: 10 12 100 45;
+     min-height: 250px;
+     padding: 10 12 0 45;
 }
 
 #mediaToggle, #infoToggle{

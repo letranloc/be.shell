@@ -51,6 +51,7 @@ QAbstractButton {
 
 .BE--GMenu QMenuBar:item:selected, .BE--GMenu QMenuBar:item:hover, .BE--SysTray:hover, .BE--Volume:hover, .BE--Clock:hover, #starter:hover, .BE--Session:hover, .BE--Device:hover, .BE--Battery:hover, #infocenter:hover, #search:hover, #control:hover, #klipper:hover { 
       background-color: palette(highlight); /* #48B3F8 before */
+      opacity: 0.5;
       background-image: url("${base}/style.css.d/background-images/noise2.png");
       background-repeat: repeat-x;
       background-clip: border;
@@ -145,9 +146,9 @@ QAbstractButton {
       border: 1px solid palette(highlight);
       border-radius: 6px;
       padding: 4 4 4 4;
-      /*NOTICE! values here are totally wrong. Sorta hack to use palette and get transparency */
-      background: qradialgradient(cx: 0.3, cy: -0.4, fx: 0.7, fy: -0.4, radius: 2.5, stop: 0 palette(highlight), stop: 1 rgba(37,37,37,06%));
-      color: palette(highlighttext); /* Doesn't match the label, need to fix this */
+      /*NOTICE! Following values are totally wrong. Sorta hack to use palette and get transparency */
+/*       background: qradialgradient(cx: 0.3, cy: -0.4, fx: 0.7, fy: -0.4, radius: 2.5, stop: 0 palette(highlight), stop: 1 rgba(37,37,37,06%)); */
+      /*color: palette(highlighttext); */ /* Doesn't match the label, need to fix this */
 }
 
 .BE--DeskIcon QLabel {
@@ -155,6 +156,11 @@ QAbstractButton {
       font-size: 8pt;
       font-family: HelveticaNeue, Liberation Sans, Nimbus Sans, Arimo, Roboto;
       font-weight: bold;
+}
+
+QLabel {
+      text-decoration: none;
+      outline: none;
 }
 
 /* Runner */

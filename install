@@ -95,7 +95,7 @@ local dateHour="$( date "+%Y%m%d%H%M%S" )"
 local oldTheme="$( kreadconfig --file be.shell --group BE::Shell --key Theme )"
 local archive="${kdeDir}/apps/be.shell/snapshots/$oldTheme.$dateHour.tar"
 
-tar -cf "$archive" install -C "${kdeDir}"/apps/be.shell/ "Themes/${oldTheme}"  -C  "${kdeDir}"/config be.shell --transform s/be.shell/be.shell.$oldTheme/ &> /dev/null 
+tar -cf "$archive" install -C "${kdeDir}"/apps/be.shell/ "Themes/${oldTheme}" "MainMenu.xml" -C  "${kdeDir}"/config be.shell --transform s/be.shell/be.shell.$oldTheme/ &> /dev/null 
 
 echo -e "\nFiles stored in\n$archive\n"
 
@@ -181,14 +181,8 @@ fi
 
 scriptDir(){
 
-#TODO! use diff to check if files differ, in order to update to latest versions.
-#Use confirm to avoid overriding users' modifications.
-
-if [[ ! -d "$HOME/.local/share/be.shell" ]]; then
-     mkdir -p "$HOME/.local/share/be.shell"
-     cp -r Scripts "$HOME/.local/share/be.shell/Scripts"
-     chmod -R 777 "$HOME"/.local/share/be.shell/Scripts/*
-fi
+     confirm "Do you want to install the provided scripts? y/N ?" &&  install -CDm755 Scripts/* -t $HOME/.local/share/be.shell/Scripts
+     confirm "Do you want to install the provided menus? y/N?" && install -CDm755 Menu/* -t $HOME/.local/share/be.shell/Menu
 
 }
 

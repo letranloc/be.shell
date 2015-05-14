@@ -217,7 +217,7 @@ isRunning(){
 local pShell
 local bShell="be.shell"
 
-if [[ $(echo $KDE_SESSION_VERSION) == "4" ]]; then
+if [[ "$KDE_SESSION_VERSION" == "4" ]]; then
     pShell="plasma-desktop"
 else
     pShell="plasmashell"

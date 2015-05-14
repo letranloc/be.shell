@@ -204,7 +204,7 @@ elif [[  -f "$configFile" ]]; then
 fi
 
 if [[ ! -d "$themesDir/$opt" ]]; then
-     cp -r "$chosenTheme" "$themesDir" 
+    install -CDm755 "$chosenTheme"/* "$themesDir/$opt" 
 else
      echo " "
      confirm "The folder $opt already exists in $themesDir. Continue anyway? y/N:" &&  cp -r "$chosenTheme" "$themesDir"
@@ -213,9 +213,6 @@ fi
 }
 
 isRunning(){
-
-local pShell
-local bShell="be.shell"
 
 if [[ "$KDE_SESSION_VERSION" == "4" ]]; then
     pShell="plasma-desktop"
@@ -229,11 +226,11 @@ if [[  -z $(pidof "$pShell") ]]; then
       confirm "I will now reload be.shell. Continue? [y/N]:" && be.shell --restart > /dev/null 2>&1
      else
       echo " "
-      confirm "Starting be.shell. Continue? [y/N]:" && "$bShell"
+      confirm "Starting be.shell. Continue? [y/N]:" && be.shell
     fi
 else
      echo " "
-     confirm "I will now stop Plasma and start be.shell. Continue? [y/N]:" && kquitapp "$pShell"; sleep 2; "$bShell" &> /dev/null
+     confirm "I will now stop Plasma and start be.shell. Continue? [y/N]:" && kquitapp "$pShell"; sleep 2; be.shell &> /dev/null
 fi
 
 }

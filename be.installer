@@ -8,7 +8,7 @@ if [ "$(id -u)" == "0" ]; then
   exit 1
 fi
 
-#Checking which version of KDE DE are we running:
+#Checking which version of KDE DE we're running:
 
 if [[ "$KDE_SESSION_VERSION" == "4" ]]; then
     pShell="plasma-desktop"
@@ -101,9 +101,9 @@ fi
 
 local dateHour="$( date "+%Y%m%d%H%M%S" )"
 local oldTheme="$( kreadconfig --file be.shell --group BE::Shell --key Theme )"
-local archive="${kdeDir}/apps/be.shell/snapshots/$oldTheme.$dateHour.tar"
+local archive="$kdeDir/apps/be.shell/snapshots/$oldTheme.$dateHour.tar"
 
-tar -cf "$archive" install -C "$kdeDir"/apps/be.shell/ "Themes/$oldTheme" "MainMenu.xml" -C "$HOME/.local/share/be.shell" "Menu" -C  "$kdeDir"/config be.shell --transform s/be.shell/be.shell.$oldTheme/ &> /dev/null 
+tar -cf "$archive" "$0" -C "$kdeDir"/apps/be.shell/ "Themes/$oldTheme" "MainMenu.xml" -C "$HOME/.local/share/be.shell" "Menu" -C  "$kdeDir"/config be.shell --transform s/be.shell/be.shell.$oldTheme/ &> /dev/null 
 
 echo -e "\nFiles stored in\n$archive\n"
 
@@ -161,19 +161,18 @@ local myColors="$(find "$chosenTheme/extra" -name "*.colorscheme" )"
 local cScheme="${myColors##*/}"
 local konsoleVersion="$(konsole --version | awk 'NR == 2 {print $2}')"
 
-echo -e "\nSetting konsole colorscheme"
-
 if [[ -n "$myColors" ]]; then
+  echo -e "\nSetting konsole colorscheme"
   if [[ "$konsoleVersion" == "Frameworks:" ]]; then
       cp "$myColors" "$HOME/.local/share/konsole"
       defProfile="$(kreadconfig5 --file konsolerc --group Desktop\ Entry --key DefaultProfile)"
       kwriteconfig5 --file "$HOME/.local/share/konsole/$defProfile" --group Appearance --key ColorScheme "${cScheme%.*}"
-   elif [[ "$konsoleVersion" != "Frameworks:" ]]; then
+  elif [[ "$konsoleVersion" != "Frameworks:" ]]; then
       cp "$myColors" "$kdeDir/apps/konsole"
       defProfile="$(kreadconfig --file konsolerc --group Desktop\ Entry --key DefaultProfile)"
       kwriteconfig --file "$kdeDir/apps/konsole/$defProfile" --group Appearance --key ColorScheme "${cScheme%.*}"
-   fi
-   konsoleprofile colors="${cScheme%.*}"
+  fi
+  konsoleprofile colors="${cScheme%.*}"
 fi
 
 local kdeSchema="$(find "$chosenTheme/extra" -name "*.colors" )"
@@ -224,7 +223,7 @@ if [[  -z $(pidof "$pShell") ]]; then
     if [[ ! -z $(pidof "be.shell") ]]; then
       echo " "
       confirm "I will now reload be.shell. Continue? [y/N]:" && be.shell --restart > /dev/null 2>&1
-     else
+    else
       echo " "
       confirm "Starting be.shell. Continue? [y/N]:" && be.shell
     fi

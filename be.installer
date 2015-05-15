@@ -217,7 +217,11 @@ if [[ ! -d "$themesDir/$opt" ]]; then
      cp -r "$chosenTheme" "$themesDir" 
 else
      echo " "
-     confirm "The folder $opt already exists in $themesDir. Continue anyway? y/N:" &&  cp -r "$chosenTheme" "$themesDir"
+     if [[ "$chosenTheme" == "$themesDir/$opt" ]]; then
+       echo "'$chosenTheme' and '$themesDir/$opt' are the same folder"
+     else
+       confirm "The folder $opt already exists in $themesDir. Continue anyway? y/N:" && rm -rf "$themesDir/$opt" &&  cp -r "$chosenTheme" "$themesDir"
+    fi
 fi
 
 }

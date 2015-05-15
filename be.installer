@@ -200,6 +200,10 @@ installer(){
 
 #Might be this is a fresh installation
 
+if [[ ! -d "$themesDir" ]]; then
+     mkdir -p "$themesDir"
+fi
+
 if [[ ! -f "$configFile" ]]; then
      cp "$chosenConf" "$configFile"
 elif [[  -f "$configFile" ]]; then
@@ -209,10 +213,11 @@ elif [[  -f "$configFile" ]]; then
      cp "$chosenConf" "$configFile"
 fi
 
-if [[  -d "$themesDir/$opt" ]]; then
-     confirm "The folder $opt already exists in $themesDir. Continue anyway? y/N:" && install -CDm755 "$chosenTheme"/* "$themesDir/$opt" 
+if [[ ! -d "$themesDir/$opt" ]]; then
+     cp -r "$chosenTheme" "$themesDir" 
 else
-      install -CDm755 "$chosenTheme"/* "$themesDir/$opt" 
+     echo " "
+     confirm "The folder $opt already exists in $themesDir. Continue anyway? y/N:" &&  cp -r "$chosenTheme" "$themesDir"
 fi
 
 }

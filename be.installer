@@ -20,8 +20,8 @@ fi
 
 declare -r scriptDir="$( cd $( dirname "${BASH_SOURCE[0]}" ) && pwd )"
 declare -r kdeDir="$(kde4-config --localprefix)share"
-declare -r themesDir="${kdeDir}/apps/be.shell/Themes"
-declare -r configFile="${kdeDir}/config/be.shell"
+declare -r themesDir="$kdeDir/apps/be.shell/Themes"
+declare -r configFile="$kdeDir/config/be.shell"
 
 #Test functions
 
@@ -103,7 +103,7 @@ local dateHour="$( date "+%Y%m%d%H%M%S" )"
 local oldTheme="$( kreadconfig --file be.shell --group BE::Shell --key Theme )"
 local archive="${kdeDir}/apps/be.shell/snapshots/$oldTheme.$dateHour.tar"
 
-tar -cf "$archive" install -C "$kdeDir"/apps/be.shell/ "Themes/$oldTheme" "MainMenu.xml" -C  "$kdeDir"/config be.shell --transform s/be.shell/be.shell.$oldTheme/ &> /dev/null 
+tar -cf "$archive" install -C "$kdeDir"/apps/be.shell/ "Themes/$oldTheme" "MainMenu.xml" -C "$HOME/.local/share/be.shell" "Menu" -C  "$kdeDir"/config be.shell --transform s/be.shell/be.shell.$oldTheme/ &> /dev/null 
 
 echo -e "\nFiles stored in\n$archive\n"
 
@@ -163,17 +163,18 @@ local konsoleVersion="$(konsole --version | awk 'NR == 2 {print $2}')"
 
 echo -e "\nSetting konsole colorscheme"
 
-if [[ -n "$myColors" && "$konsoleVersion" == "Frameworks:" ]]; then
-   cp "$myColors" "$HOME/.local/share/konsole"
-   defProfile="$(kreadconfig5 --file konsolerc --group Desktop\ Entry --key DefaultProfile)"
-   kwriteconfig5 --file "$HOME/.local/share/konsole/$defProfile" --group Appearance --key ColorScheme "${cScheme%.*}"
-elif [[ -n "$myColors" && "$konsoleVersion" != "Frameworks:" ]]; then
-   cp "$myColors" "$kdeDir/apps/konsole"
-   defProfile="$(kreadconfig --file konsolerc --group Desktop\ Entry --key DefaultProfile)"
-   kwriteconfig --file "$kdeDir/apps/konsole/$defProfile" --group Appearance --key ColorScheme "${cScheme%.*}"
+if [[ -n "$myColors" ]]; then
+  if [[ "$konsoleVersion" == "Frameworks:" ]]; then
+      cp "$myColors" "$HOME/.local/share/konsole"
+      defProfile="$(kreadconfig5 --file konsolerc --group Desktop\ Entry --key DefaultProfile)"
+      kwriteconfig5 --file "$HOME/.local/share/konsole/$defProfile" --group Appearance --key ColorScheme "${cScheme%.*}"
+   elif [[ "$konsoleVersion" != "Frameworks:" ]]; then
+      cp "$myColors" "$kdeDir/apps/konsole"
+      defProfile="$(kreadconfig --file konsolerc --group Desktop\ Entry --key DefaultProfile)"
+      kwriteconfig --file "$kdeDir/apps/konsole/$defProfile" --group Appearance --key ColorScheme "${cScheme%.*}"
+   fi
+   konsoleprofile colors="${cScheme%.*}"
 fi
-
-konsoleprofile colors="${cScheme%.*}"
 
 local kdeSchema="$(find "$chosenTheme/extra" -name "*.colors" )"
 local schemaDesc="$(kreadconfig --file "$kdeSchema" --group General --key ColorScheme)"

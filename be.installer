@@ -11,7 +11,7 @@ fi
 #Setting distro indipendent paths
 
 declare -r scriptDir="$( cd $( dirname "${BASH_SOURCE[0]}" ) && pwd )"
-declare -r kdeDir="`kde4-config --localprefix`share"
+declare -r kdeDir="$(kde4-config --localprefix)share"
 declare -r themesDir="${kdeDir}/apps/be.shell/Themes"
 declare -r configFile="${kdeDir}/config/be.shell"
 
@@ -153,17 +153,19 @@ local myColors="$(find "$chosenTheme/extra" -name "*.colorscheme" )"
 local cScheme="${myColors##*/}"
 local konsoleVersion="$(konsole --version | awk 'NR == 2 {print $2}')"
 
+echo -e "\nSetting konsole colorscheme"
+
 if [[ -n "$myColors" && "$konsoleVersion" == "Frameworks:" ]]; then
-   echo -e "\nSetting konsole colorscheme" && cp "${myColors}" "$HOME/.local/share/konsole"
+   cp "${myColors}" "$HOME/.local/share/konsole"
    defProfile="$(kreadconfig5 --file konsolerc --group Desktop\ Entry --key DefaultProfile)"
    kwriteconfig5 --file "$HOME/.local/share/konsole/${defProfile}" --group Appearance --key ColorScheme "${cScheme%.*}"
-   konsoleprofile colors="${cScheme%.*}"
 elif [[ -n "$myColors" && "$konsoleVersion" != "Frameworks:" ]]; then
-   echo -e "\nSetting konsole colorscheme" && cp "${myColors}" "$kdeDir/apps/konsole"
+   cp "${myColors}" "$kdeDir/apps/konsole"
    defProfile="$(kreadconfig --file konsolerc --group Desktop\ Entry --key DefaultProfile)"
    kwriteconfig --file "$kdeDir/apps/konsole/${defProfile}" --group Appearance --key ColorScheme "${cScheme%.*}"
-   konsoleprofile colors="${cScheme%.*}"
 fi
+
+konsoleprofile colors="${cScheme%.*}"
 
 local kdeSchema="$(find "$chosenTheme/extra" -name "*.colors" )"
 local schemaDesc="$(kreadconfig --file "${kdeSchema}" --group General --key ColorScheme)"

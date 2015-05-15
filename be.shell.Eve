@@ -94,7 +94,7 @@ Type=Volume
 
 [cover]
 Active=true
-Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet mpc cover
+Exec=$HOME/.local/share/be.shell/Scripts/applet mpc cover
 PermittedCommands=mpc toggle,cantata
 PollInterval=1000
 Type=Label
@@ -150,7 +150,7 @@ Type=Button
 
 [mail]
 Active=true
-Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet mail
+Exec=$HOME/.local/share/be.shell/Scripts/applet mail
 PermittedCommands=konsole -e mutt,kmail
 PollInterval=1000
 Type=Label
@@ -161,7 +161,7 @@ Type=MediaTray
 
 [mpc]
 Active=true
-Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet mpc mpc
+Exec=$HOME/.local/share/be.shell/Scripts/applet mpc mpc
 PermittedCommands=mpc toggle,konsole -e ncmpcpp
 PollInterval=1000
 Type=Label
@@ -202,7 +202,7 @@ Type=Systray
 
 [upico]
 Active=true
-Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet up
+Exec=$HOME/.local/share/be.shell/Scripts/applet up
 PermittedCommands=konsole -e yaourt -Syyua --ignore linux-ck --ignore linux-ck-headers
 PollInterval=100000
 Type=Label

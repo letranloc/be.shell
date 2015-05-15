@@ -171,14 +171,14 @@ Type=Button
 
 [command]
 Active=true
-Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet command
+Exec=$HOME/.local/share/be.shell/Scripts/applet command
 PermittedCommands=mpc toggle,mpc play
 PollInterval=1000
 Type=Label
 
 [cover]
 Active=true
-Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet cover
+Exec=$HOME/.local/share/be.shell/Scripts/applet cover
 PermittedCommands=cantata
 PollInterval=1000
 Type=Label
@@ -241,13 +241,13 @@ Type=Button
 
 [mpc]
 Active=true
-Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet mpc
+Exec=$HOME/.local/share/be.shell/Scripts/applet mpc
 PermittedCommands=mpc toggle,konsole -e ncmpcpp
 PollInterval=1000
 Type=Label
 
 [progress]
-Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet progress
+Exec=$HOME/.local/share/be.shell/Scripts/applet progress
 PollInterval=1000
 Type=Label
 
@@ -269,7 +269,7 @@ Spacing=0
 Type=TaskBar
 
 [time]
-Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet time
+Exec=$HOME/.local/share/be.shell/Scripts/applet time
 PollInterval=1000
 Type=Label
 

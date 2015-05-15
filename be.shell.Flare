@@ -131,7 +131,7 @@ Type=Button
 
 [mail]
 Active=true
-Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet mail
+Exec=$HOME/.local/share/be.shell/Scripts/applet mail
 PermittedCommands=konsole -e mutt,kmail
 PollInterval=1000
 Type=Label
@@ -142,13 +142,13 @@ Type=MediaTray
 
 [mpc]
 Active=true
-Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet mpc
+Exec=$HOME/.local/share/be.shell/Scripts/applet mpc
 PermittedCommands=mpc toggle,konsole -e ncmpcpp
 PollInterval=1000
 Type=Label
 
 [net]
-Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet net
+Exec=$HOME/.local/share/be.shell/Scripts/applet net
 PollInterval=1000
 Type=Label
 
@@ -174,7 +174,7 @@ Type=Systray
 
 [upico]
 Active=true
-Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet up
+Exec=$HOME/.local/share/be.shell/Scripts/applet up
 PermittedCommands=konsole -e yaourt -Syyua --ignore linux-ck --ignore linux-ck-headers
 PollInterval=100000
 Type=Label
@@ -187,6 +187,6 @@ Mode=1
 Type=Button
 
 [wifi]
-Exec=$HOME/.kde4/share/apps/be.shell/Scripts/applet wifi
+Exec=$HOME/.local/share/be.shell/Scripts/applet wifi
 PollInterval=1000
 Type=Label

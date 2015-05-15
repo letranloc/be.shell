@@ -32,7 +32,7 @@ declare -f confirm
 declare -f kdeColors
 declare -f extra
 declare -f scriptDir
-declare -f install
+declare -f installer
 declare -f isRunning
 declare -f main
 
@@ -196,7 +196,7 @@ scriptDir(){
 
 }
 
-install(){
+installer(){
 
 #Might be this is a fresh installation
 
@@ -250,7 +250,7 @@ if [ -z "$1" -o "$1" == "-p" -o "$1" == "--preset" ]; then
     if [[ "$test" -gt "0" ]]; then
       echo -e "\n\e[94mNothing to do :(\e[0m"; exit 1
      else
-      sleep 0.5; install    
+      sleep 0.5; installer    
     fi
     scriptDir
     sleep 0.5; isRunning

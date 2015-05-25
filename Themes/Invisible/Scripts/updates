@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+# Recommended PollInterval = 600000 ← 10 minutes
+
+# Further infos to be displayed:
+  
+KERV="$( uname -r )"
+PACDB="$( pacman -Q | wc -l )"
+
+# Vars for markup :
+
+BG="background-color: transparent"
+tbStyle="border-left-color: transparent; border-right-color: transparent; border-top-color: rgba(154,51,48,255); border-bottom-color: rgba(154,51,48,255);"
+STYLE="style=\"font-size: 9pt; color: rgba(244,244,244,255); background-color: rgba(48,54,59,10%);\""
+STYLE2="style=\"font-size: 8pt; color: rgba(244,244,244,255); background-color: rgba(48,54,59,10%);\""
+SEP="<tr><td height=\"1\" colspan=\"2\"><img src=\"$THEMEDIR/style.css.d/background-images/separator-sb.png\"/></td>"
+
+ACTION="<img src=\"$THEMEDIR/style.css.d/background-images/close.svg\"/>"
+# COMMAND="<a href=\"dbus:session;org.kde.yakuake;/yakuake/window;org.kde.yakuake;toggleWindowState;session;org.kde.yakuake;/yakuake/sessions;org.kde.yakuake;runCommand;'sudo pacman --Syyu'\">Updates</a>" 
+
+
+#Update just AUR packages:
+# yaourt -Sbu --aur
+
+if [[ "$UPR" -eq "1" ]]; then
+   Liter="Update"
+else
+   Liter="Updates"
+fi
+
+if [[ "$AUR" -eq "1" ]]; then
+   Litera="Update"
+else
+   Litera="Updates"
+fi
+
+if [[ "$UPR" -lt "10" && "$UPR" -gt "0" ]]; then
+   UPR=$(printf %02d ${UPR})
+elif [[ "$UPR" -eq "0" ]]; then
+   UPR="No"
+fi
+
+if [[ "$AUR" -lt "10" && "$AUR" -gt "0" ]]; then
+   AUR=$(printf %02d ${AUR})
+elif [[ "$AUR" -eq "00" ]]; then
+   AUR="No"
+fi
+
+myOutputTable="<table width=\"180\" border=\"0\" cellspacing=\"0\" cellpadding=\"6\"><tr><td colspan=\"1\" rowspan=\"1\" $STYLE>Updates:</td><td colspan=\"1\" rowspan=\"1\" align=\"right\" $STYLE2>$UPR $Liter</td>$SEP</tr></tr><tr><td colspan=\"1\" rowspan=\"1\" $STYLE>AUR:</td><td colspan=\"1\" rowspan=\"1\"  align=\"right\" $STYLE2>$AUR $Litera</td></tr>$SEP<tr><td colspan=\"1\" rowspan=\"1\" $STYLE>Installed: </td><td colspan=\"1\" rowspan=\"1\" align=\"right\" $STYLE2>$PACDB PKGs</td>$SEP</tr><tr><td colspan=\"1\" rowspan=\"1\" $STYLE>Kernel: </td><td colspan=\"1\" rowspan=\"1\" align=\"right\" $STYLE2>$KERV</td></table>"
+
+echo "$myOutputTable"

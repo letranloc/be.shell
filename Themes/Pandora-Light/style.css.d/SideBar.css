@@ -55,38 +55,37 @@
       outline: none;
 }
 
-#Music, #kdeconnect, #CalendarLabel, #Weather, #RSS {
-     color: rgba(255,255,255,250);
-     outline: none;
+#Music, #kdeconnect, #RSS, #Weather, #DummyClock, #Packages { 
+      color: rgba(255,255,255,250);
+      outline: none;
+      font-family: HelveticaNeue, Liberation Sans, Nimbus Sans, Arimo, Roboto;
+      background-color: transparent; /* rgba(235,241,244,0) */
 }
 
-#Music {
-/*      font-size: Roboto 14pt; */
-/*      margin-top: 100px; */
-      font-family: HelveticaNeue, Liberation Sans, Nimbus Sans, Arimo, Roboto; 
+#DummyClock {
+      font-size: 21pt;
+      margin: 10 150 10 15;
 }
 
-#Music, #kdeconnect, #RSS, #Weather, #CalendarLabel { 
-        background-color: rgba(235,241,244,0);
+#DummyClock:hover {
+     background: transparent;
 }
+
 
 /*Buttons*/
-
-#ToggleMusic {
-/*        margin: 10 0 0 0; */
-}
 
 #ToggleSession, #ToggleStuff, #ToggleMusic {
       margin: 0 0 0 0;
 }
 
-#ToggleMusic, #ToggleSession, #ToggleStuff, #ToggleFeed, #ToggleSettings, #Footer {
+#ToggleMusic, #ToggleSession, #ToggleStuff, #ToggleFeed, #ToggleSettings {
        width:  340px;
+       border-right: 10px solid transparent;
        background-color:  qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 rgba(20,20,20,100%), stop: 0.9 rgb(25,28,32,35%) stop: 1.0 rgba(25,28,32,05%));
        color: rgba(255,255,255,100%);
        height: 30px;
        padding-left: -300px;
-        font-size: 9pt; 
+       font-size: 9pt; 
        font-family: HelveticaNeue, Liberation Sans, Nimbus Sans, Arimo, Roboto; 
        color: rgba(179,179,179,255);
 }
@@ -95,17 +94,21 @@
       background-image: url("${base}/background-images/arrow_down.png");
       background-repeat: no-repeat;
       background-position: right center;
-      background-clip: margin;
+      background-clip: padding;
 }
 
 #SensorPanel, #StuffPanel, #MusicPanel, #FeedPanel {
      background-color:rgb(25,28,32,0%);
 }
 
-#SensorPanel, #StuffPanel {
-/*      background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 rgb(247,69,60,60%), stop: 0.9 rgb(25,28,32,15%), stop: 1.0 rgba(25,28,32,05%));*/
+#SensorPanel {
+      height: 150px;
+      padding: 10 10 10 25;
+}
+
+#StuffPanel {
       min-height: 150px;
-      padding: 10 10 10 10;
+      padding: 0 10 0 20;
 }
 
 #MusicPanel {
@@ -127,7 +130,7 @@
        background-color: rgba(179,179,179,255);
 }
 
-#mediaToggle:hover, #infoToggle:hover {
+#mediaToggle:hover, #infoToggle:hover, #Test1:hover {
        background-color: rgba(179,179,179,195);
        color: rgba(255,255,255,255);
 }
@@ -138,7 +141,7 @@
        background-color: rgba(179,179,179,255);
 }*/
 
-#mediaToggle:pressed, #infoToggle:pressed {
+#mediaToggle:pressed, #infoToggle:pressed, #Test1:pressed {
        background-color: rgba(179,179,179,155);
        color: rgba(255,255,255,255);
 }
@@ -159,4 +162,30 @@
      border-top-right-radius: 5px;
      border-bottom-right-radius: 5px;
 /*      margin-right: 25px; */
+}
+
+#Footer1 {
+      width:  320px;
+      margin: 0 0 20 0;
+      height: 50px;
+      font-size: 9pt; 
+      padding: 10 120 10 140;
+      background-color: rgba(28,30,33,100%);
+      color: rgba(179,179,179,255);
+      border-top: 1px solid rgba(95,95,95,255);
+      border-right: 10px solid transparent;
+      background-image: url("${base}/background-images/settings.png");
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-clip: padding;
+      font-family: HelveticaNeue, Liberation Sans, Nimbus Sans, Arimo, Roboto; 
+}
+
+#Test1 {
+      height: 25px;
+      font-size: 9pt; 
+      border-radius: 5px;
+      color: rgba(37,37,37,255);
+      background-color: rgba(179,179,179,255);
+      font-family: HelveticaNeue, Liberation Sans, Nimbus Sans, Arimo, Roboto; 
 }

@@ -1,5 +1,5 @@
 
-#TopPanel {
+#TopLeftPanel {
       background-color: rgba(25,28,32,95%);  /* rgba(49,55,54,100%); 85%  */ 
       padding: 0 10 0 10; 
       border-top-left-radius: 5px;
@@ -7,22 +7,23 @@
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
       margin: 2 0 0 0;
+      shadow-radius: 5px;
 } 
 
-#BottomPanel {
+#TopRightPanel {
       background-color: rgba(25,28,32,95%);  /* rgba(49,55,54,100%); 85%  */ 
       padding: 0 10 0 10; 
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
-      margin: 0 0 2 0;
+      margin: 2 0 0 0;
+      shadow-radius: 5px;
 } 
 
 /*Buttons */
 
 QAbstractButton { 
-/*       padding: 0 16 0 16;  */
       border-radius: 0px; 
       border: 0px; 
 }
@@ -33,11 +34,24 @@ QAbstractButton {
       font-size: 10pt;
       font-family: HelveticaNeue, Liberation Sans, Nimbus Sans, Arimo, Roboto; /* Chosen font & fallback alternatives */
       font-weight: normal;
-      color: rgba(250,250,250,100%);
+      color: rgba(0,0,0,100%);
 }
 
-.BE--Session, #infocenter, .BE--Clock, #pager, .BE--SysTray, .BE--Volume, .BE--MediaTray, #Time {
+#infocenter, .BE--Clock, #pager, .BE--SysTray, .BE--Volume, #Time, #klipper {
+      background-color: rgba(200,200,200,100%);
+}
+
+.BE--Clock {
+      margin: 0 0 0 0;
+}
+
+.BE--Session {
       background: transparent;
+} 
+
+.BE--MediaTray {
+      background-color: rgba(200,200,200,100%);
+      border-left: 2px solid rgba(100,100,100,100%);
 }
 
 .BE--Run QSizeGrip, *:menu-indicator { 
@@ -47,16 +61,18 @@ QAbstractButton {
 /* Various Applets &  fixes */
 
 .BE--GMenu QMenuBar { 
-      padding: 2 0 2 0; 
+      padding: 1 4 0 4; 
       spacing: 10; 
-      background-color: rgba(49,54,59,0%); /* Fix for some Qt Styles */
-      margin-bottom: 1px; /* distance of the popup menu from the label */ 
+      background-color: rgba(200,200,200,100%);
+      color: rgba(0,0,0,100%);
+      border-left: 2px solid rgba(100,100,100,100%);
+      border-right: 2px solid rgba(100,100,100,100%);
 }
 
 /* Preventive measure to ensure globalmenu will not disappear for other users */ 
 
 .BE--Panel QMenuBar::item { 
-      padding: 3 4 3 4; 
+      padding: 3 0 3 0; 
       margin: -1 0 -1 0; 
 }
 
@@ -79,15 +95,24 @@ QAbstractButton {
 
 .BE--Session { 
       margin: 0 0 0 0; 
-      padding: 0 5 0 5;
-      /*width: 22px;*/
+      padding: 0 -3 0 0;
+      height: 22px;
 }
 
-.BE--Volume, #klipper { 
-      padding: 2 0 2 0; 
-      margin: 0 4 0 4; 
-      max-width:18px; 
+#klipper {
+      padding: 0 8 0 0;
+}
+
+.BE--Volume { 
+      padding: 0 0 0 0;
+}
+
+.BE--Volume, #klipper {
+      margin: 0 0 0 0; 
+      max-width: 18px; 
       max-height: 18px;
+      border-top: 4px solid rgba(200,200,200,100%);
+      border-bottom: 4px solid rgba(200,200,200,100%);
 }
 
 #control { 
@@ -96,12 +121,14 @@ QAbstractButton {
 }
 
 #search {
+     background-color: rgba(200,200,200,100%);
      padding: 0 3 0 3;
      margin-right: 0px;
+     border-right: 2px solid rgba(100,100,100,100%);
 }
 
 .BE--MediaTray { /* Containment widget */ 
-      margin: 0 4 0 4; 
+      margin: 0 0 0 4; 
       padding: -3 0 -3 0;  
 }
 
@@ -109,8 +136,6 @@ QAbstractButton {
       max-width: 18px; 
       max-height: 18px; 
       padding: 2 5 2 5; 
-      margin-top: 1px;
-      margin-bottom: 1px;
 }
 
 /* Battery widget: still to be fixed!! */ 
@@ -119,8 +144,11 @@ QAbstractButton {
  * selection-background-color: background that fills the battery with charge stat */ 
 
 .BE--Battery {
-      margin: 1 0 1 0;
+      background-color: rgba(200,200,200,100%);
+      margin: 0 0 0 0;
       padding: 3.5 4 3.5 4;
+      border-top: 2px solid rgba(200,200,200,100%);
+      border-bottom: 2px solid rgba(200,200,200,100%);
 }
 
 .BE--Battery[charging="false"] {
@@ -129,13 +157,10 @@ QAbstractButton {
 
 .BE--Battery[charging="true"] {
       color: rgba(244,244,244,100%);
-      /*background-image: url("${base}/style.css.d/background-images/charge.png");
-      background-repeat: no-repeat;
-      background-position: center center;*/
 }
 
 .BE--Battery[charge="high"] {
-      selection-background-color: rgba(244,244,244,100%); /* (72,179,248,100%) before */
+      selection-background-color: rgba(244,244,244,100%);
 }
 
 .BE--Battery[charge="mid"] {

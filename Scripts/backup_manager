@@ -33,8 +33,16 @@ last_weekly_backup=`stat --format=%y $weekly_timestamp | tr -d - | awk '{print $
 
     fi
   
-    rm ~/.pkglist.lst && rm ~/.pkglist_AUR.lst && pacman -Qqe | grep -vx "$(pacman -Qqm)" > ~/.pkglist.lst && pacman -Qqm > ~/.pkglist_AUR.lst && /usr/bin/rsnapshot -c $config daily && echo $today >> $daily_timestamp && echo "DAILY ok!" >> $log && notify-send "Daily backup finished"
+    if [ -e ~/.pklist.lst ]; then
+    
+      rm ~/.pkglist.lst && rm ~/.pkglist_AUR.lst && pacman -Qqe | grep -vx "$(pacman -Qqm)" > ~/.pkglist.lst && pacman -Qqm > ~/.pkglist_AUR.lst && /usr/bin/rsnapshot -c $config daily && echo $today >> $daily_timestamp && echo "DAILY ok!" >> $log && echo "Daily backup finished"
+    
+    else
 
+      pacman -Qqe | grep -vx "$(pacman -Qqm)" > ~/.pkglist.lst && pacman -Qqm > ~/.pkglist_AUR.lst && /usr/bin/rsnapshot -c $config daily && echo $today >> $daily_timestamp && echo "DAILY ok!" >> $log && echo "Daily backup finished"
+    
+    fi
+    
 else
 
   echo $today >> $daily_timestamp

@@ -39,17 +39,17 @@ To see the themes available in this repo, check our [gallery](https://github.com
    
 **By script**
 
-*Notice!* The script does not install menus yet, check the [section below](https://github.com/Bedevil/be.shell#menus) for them!
+From the cloned source directory, just issue:
 
-    ./install
+    ./be.installer
     
 Or, alternatively, you can skip the list of available presets and specify directly the one you want, passing its name after the -p argument - e.g. for be.shell.Vertex :
 
-    ./install -p Vertex
+    ./be.installer -p Vertex
     
 *Note* By default the script will ask if you want to backup your current config and theme, this functionality can also be invoked with:
 
-    ./install -b
+    ./be.installer -b
     
  **Manually**
  

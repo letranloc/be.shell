@@ -79,30 +79,20 @@ updates(){
 
 myOutputFile="$THEMEDIR/Scripts/updates" 
 
-#Need to test this and write something for zypper (suse), verificato che zypper probabilmente può interrogare il database
-#solo con accesso root es. # zypper lu restituisce la lista degli aggiornamenti. Da verificare se esiste un workaround
-#per questo problema
+#Need to test this and write something for zypper (suse)
 if hash aptitude 2>/dev/null; then  #deb based distros
     UPR=$( aptitude search "~U" | wc -l )
-elif hash yum 2>/dev/null; then #fedora
+    PACDB=$( dpkg -l |grep ^ii | wc -l )
+#     UPCMD=$( sudo apt-get upgrade )
+elif hash yum 2>/dev/null; then #fedora, probably broken
     UPR=$( yum check-update | wc -l )
+    PACDB=$( rpm -qa | wc -l )
 else #Arch
     UPR=$( checkupdates | wc -l )
     AUR=$( cower --quiet -u | wc -l )
+    PACDB=$( pacman -Q | wc -l )
+#     UPCMD=$( sudo pacman -Syu )
 fi
-
-source "${myOutputFile}"
-
-}
-
-backup(){
-
-myOutputFile="$THEMEDIR/Scripts/backup"
-
-#DIR="/media/backup"
-#ERROR="No backup directory found"
-#BAK="<a href=\"exec:$HOME/.local/share/Scripts/backup_manager\"><img src=\"$THEMEDIR/TopPanel/backup.png\"width=\"18\"></a>"
-#NOBAK="<a href=\"exec:konsole --hold -e echo $ERROR\"><img src=\"$THEMEDIR/TopPanel/backup.png\"width=\"18\"></a>"
 
 source "${myOutputFile}"
 
@@ -130,6 +120,16 @@ fi
 
 }
 
+toggle(){
+
+myOutputFile="$THEMEDIR/Scripts/toggle" 
+
+command="qdbus org.kde.be.shell /Shell"
+
+source "$myOutputFile"
+
+}
+
 ###################################################################################
 #Looking for the first ARG after the script name, calling associated function if 
 #there is a match, If not, just display an useful message about alcohol addiction.
@@ -147,12 +147,12 @@ case $1 in
     up)
         updates
         ;;
-    backup)
-        backup
-        ;;
     wifi)
         wifi
         ;;
+    toggle)
+        toggle 
+       ;;
     *)
         echo "Hombre: you're drunk.Again -.-"
         exit 1

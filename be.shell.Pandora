@@ -17,7 +17,7 @@ ShadowOpacity=20
 ShowIcons=false
 Tint=0,0,0
 TrashCan=false
-Wallpaper=/home/hombre/Immagini/02446_mexicancoke_1366x768.jpg
+Wallpaper=/home/hombre/Downloads/4-140926155453.jpg
 WallpaperAlign=132
 WallpaperAspect=-1
 WallpaperDefaultAlign=132
@@ -96,10 +96,11 @@ WindowMenus=true
 
 [Music]
 Active=True
-FiFo=$HOME/.local/tmp/shelloid/mpris
+FiFo=$HOME/.local/share/skutter/mpris
 Lines=1
 PermittedCommands=dbus
 Type=Label
+Wrap=true
 
 [MusicPanel]
 Applets=Music
@@ -170,6 +171,7 @@ Id=SideBar
 Layer=3
 Length=100
 Offset=3
+Opacity=100
 Position=3
 Screen=-1
 Size=392
@@ -184,8 +186,8 @@ Type=Panel
 Visible=true
 
 [Test1]
-Exec=konsole
-Label=Test
+Exec=qdbus org.bedevil.Skutter /Control org.bedevil.Skutter.Restart
+Label=Refresh
 Mode=1
 Type=Button
 
@@ -246,13 +248,14 @@ Step=5%
 Type=Volume
 
 [Weather]
-FiFo=/tmp/shellfeed/weather
+FiFo=$HOME/.local/share/skutter/weather
 Lines=1
 Type=Label
 
 [battery]
-Exec=kcmshell5 powerdevilglobalconfig
 FillIsCharge=True
+Menu=Menu/Battery
+MenuUpdater=.local/share/be.shell/Scripts/battery
 Type=Battery
 WheelDown=qdbus org.kde.kglobalaccel /component/kded5 invokeShortcut "Increase Screen Brightness"
 WheelUp=qdbus org.kde.kglobalaccel /component/kded5 invokeShortcut "Decrease Screen Brightness"
@@ -269,9 +272,9 @@ Mode=0
 Type=Button
 
 [dfm]
+Exec=dfm
 Icon=system-file-manager
 Mode=0
-Service=dfm
 Type=Button
 
 [dock]
@@ -280,6 +283,12 @@ BlurRadius=100
 Frozen=true
 Id=dock
 Type=Panel
+
+[expander1]
+Type=stretch
+
+[expander2]
+Type=stretch
 
 [expose]
 DBus=session;org.kde.kglobalaccel;/component/kwin;org.kde.kglobalaccel.Component;invokeShortcut;ExposeAll
@@ -411,7 +420,7 @@ Type=Button
 [systray]
 FallbackIcons=,Applet NetworkManager,coverbox,covergloobus.py,kmix,nepomukcontroller,NetworkManager Applet,recorditnow,Thunderbird
 IconSize=18
-NastyIcons=chromium,coverbox,covergloobus.py,kmix,ksystraycmd,nepomukcontroller,printer-applet,qCheckGMail,soundbox,vokoscreen,wicd-client.py
+NastyIcons=,coverbox,covergloobus.py,kmix,ksystraycmd,nepomukcontroller,printer-applet,qCheckGMail,soundbox,vokoscreen,wicd-client.py
 Spacing=8
 
 [tasks]
@@ -421,7 +430,7 @@ Buttons=dfm,Browser,konsole,trojita,kate,settings,konversation,gwenview,ksysguar
 IconSize=48
 OnlyCurrentDesk=False
 OnlyMinimized=False
-Spacing=8
+Spacing=5
 Type=Taskbar
 
 [trojita]

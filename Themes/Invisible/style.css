@@ -1,6 +1,6 @@
 
 #TopLeftPanel {
-      background-color: rgba(25,28,32,95%);  /* rgba(49,55,54,100%); 85%  */ 
+      background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(20,23,27,100%), stop:0.45 rgba(95,98,103,100%), stop:1 rgba(80,83,87,100%));
       padding: 0 10 0 10; 
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
@@ -11,8 +11,8 @@
 } 
 
 #TopRightPanel {
-      background-color: rgba(25,28,32,95%);  /* rgba(49,55,54,100%); 85%  */ 
-      padding: 0 10 0 10; 
+      background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(20,23,27,100%), stop:0.45 rgba(95,98,103,100%), stop:1 rgba(80,83,87,100%));
+      padding: 0 10 0 10;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
       border-bottom-left-radius: 5px;
@@ -23,9 +23,9 @@
 
 /*Buttons */
 
-QAbstractButton { 
-      border-radius: 0px; 
-      border: 0px; 
+QAbstractButton {
+      border-radius: 0px;
+      border: 0px;
 }
 
 /* Setting fonts for most of the applets */
@@ -38,7 +38,7 @@ QAbstractButton {
 }
 
 #infocenter, .BE--Clock, #pager, .BE--SysTray, .BE--Volume, #Time, #klipper {
-      background-color: rgba(200,200,200,100%);
+      background-color: rgba(220,220,220,100%);
 }
 
 .BE--Clock {
@@ -50,7 +50,7 @@ QAbstractButton {
 } 
 
 .BE--MediaTray {
-      background-color: rgba(200,200,200,100%);
+      background-color: rgba(220,220,220,100%);
       border-left: 2px solid rgba(100,100,100,100%);
 }
 
@@ -63,7 +63,7 @@ QAbstractButton {
 .BE--GMenu QMenuBar { 
       padding: 1 4 0 4; 
       spacing: 10; 
-      background-color: rgba(200,200,200,100%);
+      background-color: rgba(220,220,220,100%);
       color: rgba(0,0,0,100%);
       border-left: 2px solid rgba(100,100,100,100%);
       border-right: 2px solid rgba(100,100,100,100%);
@@ -78,8 +78,8 @@ QAbstractButton {
 
 /* Top Panel hovered applets */
 
-.BE--GMenu QMenuBar:item:selected, .BE--GMenu QMenuBar:item:hover, .BE--SysTray:hover, .BE--Volume:hover, .BE--Clock:hover, #starter:hover, .BE--Session:hover, .BE--Device:hover, .BE--Battery:hover, #infocenter:hover, #search:hover, #control:hover, #klipper:hover { 
-      background-color: palette(highlight); /* #48B3F8 before */
+.BE--GMenu QMenuBar:item:selected, .BE--GMenu QMenuBar:item:hover, .BE--SysTray:hover, .BE--Volume:hover, .BE--Clock:hover, #starter:hover, .BE--Session:hover, .BE--Device:hover, .BE--Battery:hover, #infocenter:hover, #search:hover, #control:hover, #klipper:hover, #drive:hover {       
+      background-color: palette(highlight);
       opacity: 0.5;
       background-image: url("${base}/style.css.d/background-images/noise2.png");
       background-repeat: repeat-x;
@@ -111,8 +111,8 @@ QAbstractButton {
       margin: 0 0 0 0; 
       max-width: 18px; 
       max-height: 18px;
-      border-top: 4px solid rgba(200,200,200,100%);
-      border-bottom: 4px solid rgba(200,200,200,100%);
+      border-top: 4px solid rgba(220,220,220,100%);
+      border-bottom: 4px solid rgba(220,220,220,100%);
 }
 
 #control { 
@@ -121,10 +121,15 @@ QAbstractButton {
 }
 
 #search {
-     background-color: rgba(200,200,200,100%);
-     padding: 0 3 0 3;
-     margin-right: 0px;
-     border-right: 2px solid rgba(100,100,100,100%);
+      background-color: rgba(220,220,220,100%);
+      padding: 0 3 0 3;
+      margin-right: 0px;
+      border-right: 2px solid rgba(100,100,100,100%);
+}
+
+#drive {
+      background-color: rgba(220,220,220,100%);
+      padding: 0 3 0 0;      
 }
 
 .BE--MediaTray { /* Containment widget */ 
@@ -144,11 +149,11 @@ QAbstractButton {
  * selection-background-color: background that fills the battery with charge stat */ 
 
 .BE--Battery {
-      background-color: rgba(200,200,200,100%);
+      background-color: rgba(220,220,220,100%);
       margin: 0 0 0 0;
       padding: 3.5 4 3.5 4;
-      border-top: 2px solid rgba(200,200,200,100%);
-      border-bottom: 2px solid rgba(200,200,200,100%);
+      border-top: 2px solid rgba(220,220,220,100%);
+      border-bottom: 2px solid rgba(220,220,220,100%);
 }
 
 .BE--Battery[charging="false"] {

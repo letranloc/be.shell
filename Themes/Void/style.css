@@ -1,42 +1,138 @@
-/*Mies theme for Be::Shell by ParanoidNemo
+/*Void theme for Be::Shell by Andrea Calzavacca (paranoid.nemo@gmail.com)
  * This is the main CSS theme file, with panels config, 
  * general fixes and font management. Applet-specific 
  * parts have been moved to the 
- * /Themes/Vertex/style.css.d/ directory */ 
+ * /Themes/Void/style.css.d/ directory */ 
  
 /* Here starts the panels config*/
 
-#CoverPanel { background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255,255,255,170), stop:0.5 rgba(255,255,255,200), stop:1 rgba(255,255,255,170)); }
-#CommandPanel { background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 transparent, stop:0.45 rgba(255,255,255,10), stop:0.55 rgba(255,255,255,120), stop:1 rgba(255,255,255,170)); padding: 0 4 0 0; }
-#ProgressPanel { background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255,255,255,170), stop:0.45 rgba(255,255,255,120), stop:0.55 rgba(255,255,255,10), stop:1 transparent); padding: 0 0 0 4; }
-#MusicPanel { padding: 0 0 0 0; margin: 0 0 4 0; }
+#CoverPanel { 
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255,255,255,170), stop:0.5 rgba(255,255,255,200), stop:1 rgba(255,255,255,170)); 
+}
 
-#TopRightPanel { background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 transparent, stop:0.45 rgba(255,255,255,10), stop:0.55 rgba(255,255,255,120), stop:1 rgba(255,255,255,170)); }
-#TopLeftPanel { background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255,255,255,170), stop:0.45 rgba(255,255,255,120), stop:0.55 rgba(255,255,255,10), stop:1 transparent); padding: 0 0 0 4; }
-#ConnectPanel { background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255,255,255,170), stop:0.45 rgba(255,255,255,120), stop:0.55 rgba(255,255,255,10), stop:1 transparent); padding: 0 0 0 4; }
-#ClockPanel { background-color: transparent }
-#TopPanel { padding: 0 0 0 0; margin: 4 0 0 0; }
+#CommandPanel { 
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 transparent, stop:0.45 rgba(255,255,255,10), stop:0.55 rgba(255,255,255,120), stop:1 rgba(255,255,255,170)); 
+    padding: 0 4 0 0;     
+}
 
-#TaskPanel { background-color: transparent; }
+#ProgressPanel { 
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255,255,255,170), stop:0.45 rgba(255,255,255,120), stop:0.55 rgba(255,255,255,10), stop:1 transparent); 
+    padding: 0 0 0 4; 
+}
+
+#MusicPanel { 
+    padding: 0 0 0 0; 
+    margin: 0 0 4 0; 
+}
+
+#TopRightPanel { 
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 transparent, stop:0.45 rgba(255,255,255,10), stop:0.55 rgba(255,255,255,120), stop:1 rgba(255,255,255,170));
+}
+
+#TopLeftPanel {
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255,255,255,170), stop:0.45 rgba(255,255,255,120), stop:0.55 rgba(255,255,255,10), stop:1 transparent); 
+    padding: 0 0 0 4;
+}
+
+#ConnectPanel {
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255,255,255,170), stop:0.45 rgba(255,255,255,120), stop:0.55 rgba(255,255,255,10), stop:1 transparent); 
+    padding: 0 0 0 4;
+}
+
+#ClockPanel { 
+    background-color: transparent
+}
+
+#TopPanel {
+    padding: 0 0 0 0;
+    margin: 4 0 0 0;
+}
+
+#TaskPanel {
+    background-color: transparent;
+}
 
 /* Various Applets & fixes */
 
-.BE--Volume { background-color: transparent; padding: 0 0 0 0; max-width: 20px; }
-.BE--InfoCenter { color: transparent; image: url("${base}/TopPanel/info.png") no-repeat; align: center; max-width: 19px; padding: 0 2 0 0; }
-.BE--MediaTray { background-color: transparent; padding: 0 4 0 4; }
-.BE--MediaTray QToolButton { background-color: transparent; border: none; padding: 0 0 0 0; max-width: 18px; }
-.BE--Clock { background-color: transparent; padding: 0 0 0 0; font: 20px roboto condensed; color: rgba(214,214,214,255); }
-.BE--Clock::hover { border-bottom: 2px solid rgba(0,0,0,255); }
-*:menu-indicator { image: none; }
+.BE--Volume {
+    background-color: transparent; 
+    padding: 0 0 0 0; 
+    max-width: 20px;
+}
+
+.BE--InfoCenter {
+    color: transparent;
+    image: url("${base}/TopPanel/info.png") no-repeat;
+    align: center;
+    max-width: 19px;
+    padding: 0 2 0 0;
+}
+
+.BE--MediaTray {
+    background-color: transparent;
+    padding: 0 4 0 4;
+}
+
+.BE--MediaTray QToolButton {
+    background-color: transparent; 
+    border: none; 
+    padding: 0 0 0 0; 
+    max-width: 18px;
+}
+
+.BE--Clock { 
+    background-color: transparent; 
+    padding: 0 0 0 0; 
+    font: 20px roboto condensed; 
+    color: rgba(214,214,214,255); 
+}
+
+.BE--Clock::hover { 
+    border-bottom: 2px solid rgba(0,0,0,255); 
+}
+
+*:menu-indicator { 
+    image: none; 
+}
 
 /* Fix for simple applets*/
 
-#tasks { background-color: rgba(240,240,240,200); border-top-left-radius: 6px; border-bottom-left-radius: 6px; }
+#tasks { 
+    background-color: rgba(240,240,240,200); 
+    border-top-left-radius: 6px; 
+    border-bottom-left-radius: 6px; 
+}
 
-#command { background-color: transparent; padding: 0 4 0 0; }
-#mpc { background-color: transparent; padding: 0 0 0 0; font: 9pt robotolight; color: rgba(0,0,0,255); }
-#cover { background-color: transparent; margin: 0 0 0 0; }
-#progress { color: transparent; max-height: 4px; padding: 2 0 0 0; }
-#time { color: rgba(0,0,0,255); padding: 0 0 0 2; }
+#command { 
+    background-color: transparent; 
+    padding: 0 4 0 0;
+}
 
-#tray { background-color: transparent; border: none; padding: 0 2 0 2; }
+#mpc { 
+    background-color: transparent; 
+    padding: 0 0 0 0; 
+    font: 9pt robotolight; 
+    color: rgba(0,0,0,255); 
+}
+
+#cover { 
+    background-color: transparent; 
+    margin: 0 0 0 0;
+}
+
+#progress { 
+    color: transparent; 
+    max-height: 4px; 
+    padding: 2 0 0 0; 
+}
+
+#time { 
+    color: rgba(0,0,0,255); 
+    padding: 0 0 0 2; 
+}
+
+#tray { 
+    background-color: transparent; 
+    border: none; 
+    padding: 0 2 0 2; 
+}

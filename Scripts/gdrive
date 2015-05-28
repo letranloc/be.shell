@@ -12,9 +12,9 @@ SHELL_PATH="`kde4-config --path data`"
 SHELL_PATH="${SHELL_PATH%%:*}be.shell"
 SHELL_MENU=$SHELL_PATH/Menu/Drive.xml
 
-DIR=$HOME/drive
+DIR="$HOME/drive"
 
-STREAM='<menu>'
-STREAM="${STREAM}'<action label=\"Remote List\" exec=\"konsole --hold -e 'drive ls $DIR'\"/><action label=\"Compare\" exec=\"konsole --hold -e 'drive diff $DIR'\"/><separator/><action label=\"Update Remote\" exec=\"konsole --hold -e 'drive push $DIR'\"/><action label=\"Update Local\" exec=\"konsole --hold -e 'drive pull $DIR'\"/><separator/><action label=\"About\" exec=\"konsole --hold -e 'drive about $DIR'\"/><separator/>"
+STREAM="<menu>"
+STREAM="${STREAM}<action label=\"Remote List\" exec=\"konsole --hold -e 'drive ls $DIR'\"/><action label=\"Compare\" exec=\"konsole --hold -e 'drive diff $DIR'\"/><separator/><action label=\"Update Remote\" exec=\"konsole --hold -e 'drive push $DIR'\"/><action label=\"Update Local\" exec=\"konsole --hold -e 'drive pull $DIR'\"/><separator/><action label=\"About\" exec=\"konsole --hold -e 'drive about $DIR'\"/><separator/>"
 STREAM="${STREAM} </menu>"
-echo $STREAM > $SHELL_MENU
+echo "$STREAM" > "$SHELL_MENU"

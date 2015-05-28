@@ -1,7 +1,20 @@
-# gdrive script Copyright (C) 2015 Andrea Calzavacca
-# This script comes with ABSOLUTELY NO WARRANTY.
-# This is a free software, and you are welcome to redistribute it
-# under GNU GPL conditions.
+#!/usr/bin/env bash
 
-# This script use drive to update your Google Drive account or
-# to download any remote change to it in your local directory.
+#gdrive script Copyright (C) 2015 Andrea Calzavacca
+#This script comes with ABSOLUTELY NO WARRANTY.
+#This is a free software, and you are welcome to redistribute it
+#under GNU GPL conditions.
+
+#This script use drive to update your Google Drive account or
+#to download any remote change to it in your local directory.
+
+SHELL_PATH="`kde4-config --path data`"
+SHELL_PATH="${SHELL_PATH%%:*}be.shell"
+SHELL_MENU=$SHELL_PATH/Menu/Drive.xml
+
+DIR=$HOME/drive
+
+STREAM='<menu>'
+STREAM="${STREAM}'<action label=\"Remote List\" exec=\"konsole --hold -e 'drive ls $DIR'\"/><action label=\"Compare\" exec=\"konsole --hold -e 'drive diff $DIR'\"/><separator/><action label=\"Update Remote\" exec=\"konsole --hold -e 'drive push $DIR'\"/><action label=\"Update Local\" exec=\"konsole --hold -e 'drive pull $DIR'\"/><separator/><action label=\"About\" exec=\"konsole --hold -e 'drive about $DIR'\"/><separator/>"
+STREAM="${STREAM} </menu>"
+echo $STREAM > $SHELL_MENU

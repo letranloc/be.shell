@@ -1,0 +1,7 @@
+# gdrive script Copyright (C) 2015 Andrea Calzavacca
+# This script comes with ABSOLUTELY NO WARRANTY.
+# This is a free software, and you are welcome to redistribute it
+# under GNU GPL conditions.
+
+# This script use drive to update your Google Drive account or
+# to download any remote change to it in your local directory.

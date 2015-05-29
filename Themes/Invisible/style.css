@@ -42,6 +42,7 @@ QAbstractButton {
 }
 
 .BE--Clock {
+      padding: 0 2 0 2;
       margin: 0 0 0 0;
 }
 
@@ -100,7 +101,7 @@ QAbstractButton {
 }
 
 #klipper {
-      padding: 0 8 0 0;
+      padding: 0 6 0 0;
 }
 
 .BE--Volume { 
@@ -108,7 +109,7 @@ QAbstractButton {
 }
 
 .BE--Volume, #klipper {
-      margin: 0 0 0 0; 
+      margin: 0 0 0 0;
       max-width: 18px; 
       max-height: 18px;
       border-top: 4px solid rgba(220,220,220,100%);
@@ -122,9 +123,10 @@ QAbstractButton {
 
 #search {
       background-color: rgba(220,220,220,100%);
-      padding: 0 3 0 3;
+      padding: 0 6 0 6;
       margin-right: 0px;
       border-right: 2px solid rgba(100,100,100,100%);
+      max-width: 14px;
 }
 
 #drive {

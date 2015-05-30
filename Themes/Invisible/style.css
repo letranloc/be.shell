@@ -21,6 +21,15 @@
       shadow-radius: 5px;
 } 
 
+#XMM {
+      background-color: rgba(25,28,32,85%);
+      margin: 2 0 0 2;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+}
+
 /*Buttons */
 
 QAbstractButton {
@@ -96,7 +105,7 @@ QAbstractButton {
 
 .BE--Session { 
       margin: 0 0 0 0; 
-      padding: 0 -3 0 0;
+      padding: 0 -1 0 0;
       height: 22px;
 }
 
@@ -237,9 +246,57 @@ QLabel {
 /* WmCtrl buttons */
 
 #close, #min, #max { 
-      color: #F2F2F4;
-      padding: 3 0 3 0;
-      margin: 3 -15 3 -15; 
-      width: 16px;
-      height: 16px;
+      color: transparent;
+      padding: 2 0 0 2;
+      margin: 1 0 0 0; 
+      width: 18px;
+      height: 18px;
+}
+
+#close {
+      background-image: url("${base}/XMM/close.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      max-width: 18px;
+      max-height: 18px;
+}
+
+#close:hover {
+      background-image: url("${base}/XMM/close_hover.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      max-width: 18px;
+      max-height: 18px;
+}
+
+#min {
+      background-image: url("${base}/XMM/min.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      max-width: 18px;
+      max-height: 18px;
+}
+
+#min:hover {
+      background-image: url("${base}/XMM/min_hover.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      max-width: 18px;
+      max-height: 18px;
+}
+
+#max {
+      background-image: url("${base}/XMM/max.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      max-width: 18px;
+      max-height: 18px;
+}
+
+#max:hover {
+      background-image: url("${base}/XMM/max_hover.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      max-width: 18px;
+      max-height: 18px;
 }

@@ -9,8 +9,8 @@ Structure and Contributions
 
 - Master branch contains all the stable features and completed themes.
 - Alpha-features branch is used to start developing new features; the contents of this branch are highly unstable and maybe even dangerous for your system. If you want to propose a new feature please make a [Pull request](http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project#The-GitHub-Flow) under this branch.
-- Beta-features branch is used to test features introduced and developed under Alpha-features branch before to be merged into the master one. The contents may still be not completely stable. If you want test some of this features we will be very glad if you report every issue using the [Github dedicated tool](https://github.com/Bedevil/be.shell/issues).
-- Other branches contain themes under-development and not ready for a release. They could result not tested for  your resolution and might change drastically during time. 
+- Beta-features branch is used to test features introduced and developed under Alpha-features branch before merge it into the master one. The contents may still be not completely stable. If you want test some of this features we will be very glad if you report every issue using the [Github dedicated tool](https://github.com/Bedevil/be.shell/issues).
+- Other branches contain themes under-development and not ready for a release. They could result not tested for some resolution and might change drastically during time. 
 
 If you want to contribute to this project, in any of the described branch, please use the standard git contribution method - that you can find [here](http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project) - by creating an appropriate pull request.
 

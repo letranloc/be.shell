@@ -10,7 +10,7 @@
 /*Subpanels */
 
 #PagesContainer {
-      background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 rgb(25,28,32,85%), stop: 1.0 rgba(28,30,33,100%));
+      background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 rgb(25,28,32,90%), stop: 0.9 rgba(28,30,33,100%));
       min-width: 500px;
       max-width: 500px;
       margin-left: -54px;
@@ -28,12 +28,12 @@
 #ControlMain {
 /*       padding: 0 0 0 0; */
       border-bottom: 1px solid rgba(95,95,95,255);
-      background-color: rgb(25,28,32,85%);
+      background-color:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 rgb(25,28,32,100%), stop: 1.0 rgba(28,28,32,90%));
       min-width: 76px; /* 96px before */
       max-width: 76px;
       min-height: 45px;
       max-height: 45px;
-      padding: 20 35 20 35;
+      padding: 20 25 20 25;  /*  20 35 20 35; */
 }
 
 /*Labels*/
@@ -103,12 +103,12 @@
 
 #SensorPanel {
       height: 150px;
-      padding: 10 10 10 25;
+      padding: 10 0 10 50;  /* 10 10 10 25*/
 }
 
 #StuffPanel {
       min-height: 150px;
-      padding: 0 10 0 20;
+      padding: 0 0 0 10; /* 0 10 0 10 */
 }
 
 #MusicPanel {
@@ -173,7 +173,7 @@
       background-color: rgba(28,30,33,100%);
       color: rgba(179,179,179,255);
       border-top: 1px solid rgba(95,95,95,255);
-      border-right: 10px solid transparent;
+      border-right: 10px solid rgba(28,30,33,100%);
       background-image: url("${base}/background-images/settings.png");
       background-repeat: no-repeat;
       background-position: right center;

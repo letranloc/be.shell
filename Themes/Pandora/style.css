@@ -1,9 +1,9 @@
 
 #TopPanel {
-      background-color: rgba(25,28,32,95%);  /* rgba(49,55,54,100%); 85%  */ 
+      background-color: rgba(25,28,32,100%);  /* rgba(49,55,54,100%); 85%  */ 
       border-bottom : 0px inset rgba(37,37,37,0%); /* rgba(44,31,25,40%); */
       padding: 0 0 0 10; 
-      border-bottom: 0.5 outset transparent;
+      border-bottom: 0 outset transparent;
 } 
 
 /*Buttons */
@@ -34,22 +34,22 @@ QAbstractButton {
 /* Various Applets &  fixes */
 
 .BE--GMenu QMenuBar { 
-      padding: 2 0 2 0; 
+      padding: 2 0 4 0; 
       spacing: 10; 
       background-color: rgba(49,54,59,0%); /* Fix for some Qt Styles */
-      margin-bottom: 1px; /* distance of the popup menu from the label */ 
+     /* margin-bottom: 1px;*/ /* distance of the popup menu from the label */ 
 }
 
 /* Preventive measure to ensure globalmenu will not disappear for other users */ 
 
 .BE--Panel QMenuBar::item { 
-      padding: 3 4 3 4; 
+      padding: 3 4 4 4; 
       margin: -1 0 -1 0; 
 }
 
 /* Top Panel hovered applets */
 
-.BE--GMenu QMenuBar:item:selected, .BE--GMenu QMenuBar:item:hover, .BE--SysTray:hover, .BE--Volume:hover, .BE--Clock:hover, #starter:hover, .BE--Session:hover, .BE--Device:hover, .BE--Battery:hover, #infocenter:hover, #search:hover, #control:hover, #klipper:hover { 
+.BE--GMenu QMenuBar:item:selected, .BE--GMenu QMenuBar:item:hover, .BE--Clock:hover, #starter:hover, .BE--Session:hover, #search:hover, #control:hover, .BE--Battery:hover, .BE--Device:hover, #infocenter:hover,   #klipper:hover, .BE--SysTray:hover, .BE--Volume:hover { 
       background-color: palette(highlight); /* #48B3F8 before */
       opacity: 0.5;
       background-image: url("${base}/style.css.d/background-images/noise2.png");
@@ -72,7 +72,7 @@ QAbstractButton {
 }
 
 .BE--Volume, #klipper { 
-      padding: 2 0 2 0; 
+      padding: 2 0 3 0; 
       margin: 0 4 0 4; 
       max-width:18px; 
       max-height: 18px;
@@ -96,9 +96,9 @@ QAbstractButton {
 .BE--Device { /* Each device in .BE--MediaTray */
       max-width: 18px; 
       max-height: 18px; 
-      padding: 2 5 2 5; 
-      margin-top: 1px;
-      margin-bottom: 1px;
+      padding: 2 5 3 5;  /* 2 5 2 5; */
+/*      margin-top: 1px;
+      margin-bottom: 1px;*/
 }
 
 /* Battery widget: still to be fixed!! */ 
@@ -107,8 +107,8 @@ QAbstractButton {
  * selection-background-color: background that fills the battery with charge stat */ 
 
 .BE--Battery {
-      margin: 1 0 1 0;
-      padding: 3.5 4 3.5 4;
+      margin: 0 0 0 0;
+      padding: 5 4 5 4;
 }
 
 .BE--Battery[charging="false"] {
@@ -117,10 +117,14 @@ QAbstractButton {
 
 .BE--Battery[charging="true"] {
       color: rgba(244,244,244,100%);
+      /*background-image: url("${base}/style.css.d/background-images/charge.png");
+      background-repeat: no-repeat;
+      background-position: center center;*/
 }
 
 .BE--Battery[charge="high"] {
       selection-background-color: rgba(244,244,244,100%); /* (72,179,248,100%) before */
+/*       image: url("${base}/style.css.d/background-images/charge.png"); */
 }
 
 .BE--Battery[charge="mid"] {
